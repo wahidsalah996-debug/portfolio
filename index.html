@@ -113,6 +113,10 @@
     .skills { display: flex; flex-wrap: wrap; gap: 12px; }
     .skill { padding: 10px 15px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); color: #dce7fa; }
     .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .project-preview { display: block; position: relative; overflow: hidden; aspect-ratio: 16 / 9; margin: -23px -23px 21px; border-radius: var(--radius) var(--radius) 0 0; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+    .project-preview img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .project-card:hover .project-preview img { transform: scale(1.035); }
+    .project-preview::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(5,12,23,.2)); pointer-events: none; }
     .project-card { display: flex; flex-direction: column; min-height: 310px; padding: 23px; border-radius: var(--radius); border: 1px solid var(--border); background: linear-gradient(160deg, rgba(20,35,58,.96), rgba(12,22,38,.96)); box-shadow: 0 12px 35px rgba(0,0,0,.08); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
     .project-card:hover, .project-card:focus-within { transform: translateY(-5px); border-color: rgba(117,229,223,.52); box-shadow: 0 22px 48px rgba(0,0,0,.2); }
     .project-card:focus-within { outline: 2px solid rgba(117,229,223,.32); outline-offset: 3px; }
@@ -250,6 +254,11 @@
         </div>
         <div class="projects">
           <article class="project-card">
+            <div class="project-preview"><img src="./assets/project-clinic-management.svg" alt="Clinic management dashboard concept preview" width="1200" height="675" loading="lazy" decoding="async"></div>
+            <div class="project-preview"><img src="./assets/project-qadayai.svg" alt="Qadayai Arabic-first legal technology dashboard concept preview" width="1200" height="675" loading="lazy" decoding="async"></div>
+            <div class="project-preview"><img src="./assets/project-lawyer.svg" alt="Legal practice website concept preview with gold scales symbol" width="1200" height="675" loading="lazy" decoding="async"></div>
+            <div class="project-preview"><img src="./assets/project-dental-clinic.svg" alt="Dental clinic website concept preview with services and appointment button" width="1200" height="675" loading="lazy" decoding="async"></div>
+            <div class="project-preview"><img src="./assets/project-portfolio.svg" alt="Personal developer portfolio preview: Law, AI and digital projects" width="1200" height="675" loading="lazy" decoding="async"></div>
             <div class="project-top"><div class="project-icon" aria-hidden="true">✦</div><span class="project-type">Portfolio</span></div>
             <h3>Personal Portfolio</h3>
             <p>A central showcase for selected work, development skills, and a straightforward contact path for potential clients.</p>
