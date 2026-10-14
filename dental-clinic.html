@@ -1,207 +1,46 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>عيادة الابتسامة</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b2a3c">
+<meta name="description" content="A modern, responsive dental clinic website concept with services, patient guidance, and clear appointment contact options.">
+<title>BrightSmile Dental | Website Concept</title>
 <style>
-  :root{--navy:#0B2A3C;--aqua:#12B5A6;--aqua-d:#0C8F83;--mint:#E6F4F1;--ink:#16303F;--mut:#5B7381;--bg:#FAFCFC;--line:#D5E3E3}
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:Cairo,Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
-  a{color:inherit}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-  .bar{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff}
-  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
-  .brand{font-weight:800;font-size:18px}
-  .lang{display:flex;border:1px solid #3B5B6E;border-radius:8px;overflow:hidden}
-  .lang button{background:none;border:0;color:#B9CDD6;font:600 14px Cairo,sans-serif;padding:6px 14px;cursor:pointer}
-  .lang button.on{background:var(--aqua);color:#04201D}
-  .hero{background:var(--navy);color:#fff;padding:40px 0 48px}
-  .hero .wrap{display:grid;gap:28px}
-  .hero h1{font-size:clamp(28px,6vw,46px);line-height:1.25;margin:0 0 12px;font-weight:800}
-  .hero p{margin:0 0 20px;color:#B9CDD6;font-size:17px;max-width:46ch}
-  .btn{display:inline-block;padding:12px 24px;border-radius:10px;font:700 16px Cairo,sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
-  .btn-main{background:var(--aqua);color:#04201D}
-  .btn-ghost{border-color:#3B5B6E;color:#fff}
-  .facts{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
-  .facts b{display:block;font-size:24px;color:var(--aqua)}
-  .facts span{font-size:14px;color:#B9CDD6}
-  .book{background:#fff;color:var(--ink);border-radius:14px;padding:22px}
-  .book h2{margin:0 0 12px;font-size:20px}
-  label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
-  input,select{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;font:16px Cairo,sans-serif;background:#fff;color:var(--ink)}
-  input:focus,select:focus,.btn:focus-visible,.lang button:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}
-  .book .btn{width:100%;margin-top:16px;background:var(--navy);color:#fff}
-  section{padding:44px 0}
-  h2.t{font-size:26px;margin:0 0 22px;font-weight:800}
-  .list>div{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:16px 0;border-top:1px solid var(--line)}
-  .list>div:last-child{border-bottom:1px solid var(--line)}
-  .ic{grid-row:span 2;font-size:28px;line-height:1.2}
-  .list h3{margin:0;font-size:18px}
-  .list p{margin:0;color:var(--mut)}
-  .alt{background:var(--mint)}
-  .three{display:grid;gap:18px}
-  .three h3{margin:0 0 4px;font-size:18px;color:var(--aqua-d)}
-  .three p{margin:0}
-  .q{margin:0 0 18px;padding-inline-start:16px;border-inline-start:4px solid var(--aqua)}
-  .q p{margin:0 0 4px;font-size:17px}
-  .q cite{font-style:normal;color:var(--mut);font-size:14px}
-  .info{display:grid;gap:10px;font-size:17px}
-  .info b{color:var(--aqua-d)}
-  footer{background:var(--navy);color:#B9CDD6;text-align:center;padding:22px 0;font-size:14px}
-  .wa{position:fixed;inset-block-end:18px;inset-inline-end:18px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
-  @media(min-width:760px){
-    .hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}
-    .three{grid-template-columns:repeat(3,1fr)}
-    .list{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
-    .list>div:nth-last-child(2){border-bottom:1px solid var(--line)}
-  }
+:root{--navy:#0b2a3c;--teal:#12b5a6;--teal-dark:#087f78;--mint:#e9f8f5;--ink:#17313f;--muted:#617784;--paper:#fbfdfd;--line:#dce8e8;--white:#fff;--radius:22px;--shadow:0 20px 55px rgba(11,42,60,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.7}a{color:inherit}button,a{touch-action:manipulation}a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:4px}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.skip{position:absolute;top:-50px;left:12px;background:var(--teal);padding:10px;z-index:99}.skip:focus{top:10px}
+header{position:sticky;top:0;z-index:30;background:rgba(11,42,60,.96);color:white;backdrop-filter:blur(12px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.3px}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--teal);color:var(--navy);font-size:1.25rem}.links{display:flex;align-items:center;gap:24px}.links a{text-decoration:none;color:#d6e9ed;font-size:.92rem}.links a:hover{color:#7ef0e1}.nav-actions{display:flex;gap:8px;align-items:center}.lang,.menu{font:inherit;color:white;background:transparent;border:1px solid #ffffff40;border-radius:10px;padding:8px 11px;cursor:pointer}.menu{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;min-height:47px;border-radius:12px;text-decoration:none;font-weight:750;border:1px solid transparent;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--teal);color:#062c37}.secondary{border-color:var(--line);background:white;color:var(--navy)}.header-btn{background:var(--teal);color:var(--navy);padding:9px 13px;min-height:40px;font-size:.9rem}
+.hero{padding:78px 0 64px;background:linear-gradient(135deg,#eefaf8 0%,#fbfdfd 55%,#e5f6f4 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 12px;background:#d7f5f0;color:var(--teal-dark);font-size:.85rem;font-weight:800}.eyebrow:before{content:"";width:7px;height:7px;background:var(--teal);border-radius:50%}h1{font-size:clamp(2.7rem,5.6vw,4.8rem);line-height:1.06;letter-spacing:-2px;margin:20px 0}.accent{color:var(--teal-dark)}.lead{font-size:1.1rem;color:var(--muted);max-width:570px;margin:0 0 25px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.trust{display:flex;flex-wrap:wrap;gap:12px 20px;color:var(--muted);font-size:.9rem;margin-top:25px}.trust span:before{content:"✓";color:var(--teal-dark);font-weight:900;margin-right:7px}
+.visual{position:relative;min-height:365px;border-radius:32px;background:linear-gradient(145deg,#0b2a3c,#145b68);padding:28px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);overflow:hidden}.visual:before,.visual:after{content:"";position:absolute;border:1px solid #ffffff20;border-radius:50%;width:310px;height:310px}.visual:after{width:410px;height:410px}.tooth{position:relative;z-index:1;width:180px;height:210px;background:linear-gradient(140deg,#fff,#d8f5f0);border-radius:48% 48% 40% 40% / 35% 35% 62% 62%;transform:rotate(-7deg);box-shadow:0 25px 70px #031c2b70}.tooth:before{content:"";position:absolute;left:23px;right:23px;top:27px;height:72px;border-radius:50%;background:#fff9}.float{position:absolute;z-index:2;background:#ffffffed;color:var(--navy);border-radius:15px;padding:12px 15px;box-shadow:var(--shadow);font-size:.88rem;font-weight:750}.float-one{top:28px;left:22px}.float-two{bottom:25px;right:20px}
+section.content{padding:76px 0}.section-head{max-width:680px;margin-bottom:30px}.kicker{color:var(--teal-dark);font-size:.82rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 7px}h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.2;letter-spacing:-.8px;margin:0 0 12px}.muted{color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 8px 28px #0b2a3c05}.icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:var(--mint);color:var(--teal-dark);font-size:1.35rem;margin-bottom:16px}.card h3{margin:0 0 7px;font-size:1.12rem}.card p{margin:0;color:var(--muted);font-size:.94rem}.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px;align-items:start}.soft-panel{background:var(--mint);border-radius:var(--radius);padding:28px}.list{display:grid;gap:15px}.list-item{display:flex;gap:12px}.tick{flex:0 0 28px;height:28px;display:grid;place-items:center;background:#d5f2ed;color:var(--teal-dark);border-radius:9px;font-weight:900}.list-item strong{display:block}.list-item p{margin:2px 0 0;color:var(--muted);font-size:.93rem}
+.cta{padding:50px;border-radius:28px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:space-between;gap:28px}.cta h2{max-width:620px}.cta p{color:#c1d4dd;max-width:650px;margin:0}.cta .primary{white-space:nowrap}.demo-note{font-size:.82rem;color:var(--muted);margin-top:20px}.contact-strip{padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.contact-inner{display:flex;justify-content:space-between;gap:18px;align-items:center}.contact-inner p{margin:0;color:var(--muted)}footer{padding:25px 0;color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:20px}.foot a{color:var(--teal-dark);text-decoration:none}
+@media(max-width:850px){.hero-grid,.split{grid-template-columns:1fr}.visual{min-height:310px}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.cta{padding:34px;align-items:flex-start;flex-direction:column}.links{gap:13px}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}.nav{min-height:68px;flex-wrap:wrap}.menu{display:inline-flex}.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:12px 20px 20px;flex-direction:column;align-items:stretch;border-top:1px solid #ffffff20}.links.open{display:flex}.links a{padding:8px 0}.nav-actions .header-btn{display:none}.hero{padding:52px 0 44px}h1{letter-spacing:-1.3px}.visual{min-height:260px;padding:15px}.tooth{width:135px;height:160px}.visual:before{width:230px;height:230px}.visual:after{width:300px;height:300px}.grid3{grid-template-columns:1fr}section.content{padding:54px 0}.cta{padding:27px}.contact-inner,.foot{align-items:flex-start;flex-direction:column}.brand{font-size:.93rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-
-<div class="bar"><div class="wrap">
-  <div class="brand">🦷 <span data-i="brand"></span></div>
-  <div class="lang" role="group" aria-label="Language">
-    <button data-l="ar">AR</button><button data-l="fr">FR</button><button data-l="en">EN</button>
-  </div>
-</div></div>
-
-<header class="hero"><div class="wrap">
-  <div>
-    <h1 data-i="h1"></h1>
-    <p data-i="sub"></p>
-    <a class="btn btn-main" href="#book" data-i="cta"></a>
-    <a class="btn btn-ghost" href="tel:+213666780427" data-i="call"></a>
-    <div class="facts">
-      <div><b>10+</b><span data-i="f1"></span></div>
-      <div><b>5000+</b><span data-i="f2"></span></div>
-      <div><b>4.9/5</b><span data-i="f3"></span></div>
-    </div>
-  </div>
-  <form class="book" id="book">
-    <h2 data-i="bt"></h2>
-    <label for="n" data-i="ln"></label>
-    <input id="n" required autocomplete="name">
-    <label for="p" data-i="lp"></label>
-    <input id="p" type="tel" required autocomplete="tel">
-    <label for="s" data-i="ls"></label>
-    <select id="s">
-      <option data-i="s1"></option><option data-i="s2"></option><option data-i="s3"></option>
-      <option data-i="s4"></option><option data-i="s5"></option><option data-i="s6"></option>
-    </select>
-    <button class="btn" type="submit" data-i="send"></button>
-  </form>
-</div></header>
-
-<section><div class="wrap">
-  <h2 class="t" data-i="st"></h2>
-  <div class="list">
-    <div><span class="ic">🪥</span><h3 data-i="s1"></h3><p data-i="d1"></p></div>
-    <div><span class="ic">✨</span><h3 data-i="s2"></h3><p data-i="d2"></p></div>
-    <div><span class="ic">🦷</span><h3 data-i="s3"></h3><p data-i="d3"></p></div>
-    <div><span class="ic">😁</span><h3 data-i="s4"></h3><p data-i="d4"></p></div>
-    <div><span class="ic">🧒</span><h3 data-i="s5"></h3><p data-i="d5"></p></div>
-    <div><span class="ic">🚑</span><h3 data-i="s6"></h3><p data-i="d6"></p></div>
-  </div>
-</div></section>
-
-<section class="alt"><div class="wrap">
-  <h2 class="t" data-i="wt"></h2>
-  <div class="three">
-    <div><h3 data-i="w1"></h3><p data-i="w1d"></p></div>
-    <div><h3 data-i="w2"></h3><p data-i="w2d"></p></div>
-    <div><h3 data-i="w3"></h3><p data-i="w3d"></p></div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <h2 class="t" data-i="rt"></h2>
-  <blockquote class="q"><p data-i="r1"></p><cite data-i="c1"></cite></blockquote>
-  <blockquote class="q"><p data-i="r2"></p><cite data-i="c2"></cite></blockquote>
-  <blockquote class="q"><p data-i="r3"></p><cite data-i="c3"></cite></blockquote>
-</div></section>
-
-<section class="alt"><div class="wrap">
-  <h2 class="t" data-i="ct"></h2>
-  <div class="info">
-    <div><b data-i="hl"></b> <span data-i="hv"></span></div>
-    <div><b data-i="al"></b> <span data-i="av"></span></div>
-    <div><b data-i="pl"></b> <a href="tel:+213666780427" dir="ltr">+213 666 780 427</a></div>
-  </div>
-</div></section>
-
-<footer><div class="wrap"><span data-i="rights"></span></div></footer>
-<a class="wa" id="wa" href="#" aria-label="WhatsApp">💬</a>
-
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="logo" aria-hidden="true">✚</span><span data-en="BrightSmile Dental" data-fr="BrightSmile Dentaire">BrightSmile Dental</span></a>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu ☰</button>
+<nav class="links" id="links" aria-label="Main navigation"><a href="#services" data-en="Services" data-fr="Services">Services</a><a href="#approach" data-en="Our approach" data-fr="Notre approche">Our approach</a><a href="#visit" data-en="Your visit" data-fr="Votre visite">Your visit</a><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></nav>
+<div class="nav-actions"><button class="lang" id="language" aria-label="Switch language">FR</button><a class="btn header-btn" href="#contact" data-en="Request an appointment ↗" data-fr="Demander un rendez-vous ↗">Request an appointment ↗</a></div></div></header>
+<main id="main">
+<section class="hero" id="home"><div class="wrap hero-grid"><div><span class="eyebrow" data-en="A fresh approach to your smile" data-fr="Une approche moderne de votre sourire">A fresh approach to your smile</span><h1 data-en="Confidence starts with a <span class='accent'>healthy smile.</span>" data-fr="La confiance commence par un <span class='accent'>sourire sain.</span>">Confidence starts with a <span class="accent">healthy smile.</span></h1><p class="lead" data-en="A calm, welcoming dental clinic website concept built to help patients explore services, prepare for a visit, and find the right way to get in touch." data-fr="Un concept de site pour cabinet dentaire, conçu pour aider les patients à découvrir les services, préparer leur visite et contacter facilement le cabinet.">A calm, welcoming dental clinic website concept built to help patients explore services, prepare for a visit, and find the right way to get in touch.</p><div class="hero-actions"><a class="btn primary" href="#contact" data-en="Ask about an appointment ↗" data-fr="Demander un rendez-vous ↗">Ask about an appointment ↗</a><a class="btn secondary" href="#services" data-en="Explore services" data-fr="Découvrir les services">Explore services</a></div><div class="trust"><span data-en="Patient-friendly information" data-fr="Informations claires">Patient-friendly information</span><span data-en="Mobile-ready layout" data-fr="Adapté au mobile">Mobile-ready layout</span></div></div><div class="visual" aria-label="Abstract dental-themed illustration" role="img"><div class="tooth"></div><div class="float float-one" data-en="Care made clearer" data-fr="Des soins plus clairs">Care made clearer</div><div class="float float-two" data-en="Your smile matters" data-fr="Votre sourire compte">Your smile matters</div></div></div></section>
+<section class="content" id="services"><div class="wrap"><div class="section-head"><p class="kicker" data-en="Services" data-fr="Services">Services</p><h2 data-en="Support for every stage of your smile" data-fr="Un accompagnement pour votre sourire">Support for every stage of your smile</h2><p class="muted" data-en="A clear service menu helps visitors understand what a clinic offers. The examples below are placeholders and should be confirmed by the clinic before launch." data-fr="Une présentation claire aide les visiteurs à comprendre les services proposés. Ces exemples doivent être validés par le cabinet avant publication.">A clear service menu helps visitors understand what a clinic offers. The examples below are placeholders and should be confirmed by the clinic before launch.</p></div><div class="grid3">
+<article class="card"><div class="icon" aria-hidden="true">✦</div><h3 data-en="Preventive care" data-fr="Soins préventifs">Preventive care</h3><p data-en="Routine check-ups and oral hygiene guidance, with information tailored to the clinic's actual services." data-fr="Contrôles réguliers et conseils d'hygiène bucco-dentaire, selon les services réellement proposés.">Routine check-ups and oral hygiene guidance, with information tailored to the clinic's actual services.</p></article>
+<article class="card"><div class="icon" aria-hidden="true">◇</div><h3 data-en="Restorative dentistry" data-fr="Soins restaurateurs">Restorative dentistry</h3><p data-en="Explain available treatment options in accessible language and encourage patients to discuss individual needs with a professional." data-fr="Présenter les options disponibles en termes simples et inviter les patients à discuter de leurs besoins avec un professionnel.">Explain available treatment options in accessible language and encourage patients to discuss individual needs with a professional.</p></article>
+<article class="card"><div class="icon" aria-hidden="true">☼</div><h3 data-en="Smile aesthetics" data-fr="Esthétique du sourire">Smile aesthetics</h3><p data-en="A dedicated section for cosmetic services, only if offered by the clinic and reviewed by its dental team." data-fr="Une rubrique dédiée à l'esthétique, uniquement si ces services sont proposés et validés par l'équipe dentaire.">A dedicated section for cosmetic services, only if offered by the clinic and reviewed by its dental team.</p></article>
+</div></div></section>
+<section class="content" id="approach" style="background:#f0f8f7"><div class="wrap split"><div><p class="kicker" data-en="Our approach" data-fr="Notre approche">Our approach</p><h2 data-en="A more reassuring first step" data-fr="Un premier pas plus rassurant">A more reassuring first step</h2><p class="muted" data-en="Patients often want to know what to expect before they call. Helpful information and clear contact options can make that first step easier." data-fr="Avant de prendre contact, les patients veulent souvent savoir à quoi s'attendre. Des informations utiles et des moyens de contact clairs facilitent cette première étape.">Patients often want to know what to expect before they call. Helpful information and clear contact options can make that first step easier.</p></div><div class="list"><div class="list-item"><span class="tick">✓</span><div><strong data-en="Clear information" data-fr="Informations claires">Clear information</strong><p data-en="Describe the clinic, its team, opening hours, and services using verified details." data-fr="Présenter le cabinet, son équipe, ses horaires et ses services avec des informations vérifiées.">Describe the clinic, its team, opening hours, and services using verified details.</p></div></div><div class="list-item"><span class="tick">✓</span><div><strong data-en="Simple next steps" data-fr="Étapes simples">Simple next steps</strong><p data-en="Offer a clear appointment request route and explain how the clinic confirms bookings." data-fr="Proposer un moyen clair de demander un rendez-vous et expliquer comment il sera confirmé.">Offer a clear appointment request route and explain how the clinic confirms bookings.</p></div></div><div class="list-item"><span class="tick">✓</span><div><strong data-en="Comfort on every screen" data-fr="Confort sur tous les écrans">Comfort on every screen</strong><p data-en="A responsive layout keeps key details accessible on mobile, tablet, and desktop." data-fr="Une mise en page adaptative rend les informations accessibles sur mobile, tablette et ordinateur.">A responsive layout keeps key details accessible on mobile, tablet, and desktop.</p></div></div></div></div></section>
+<section class="content" id="visit"><div class="wrap split"><div><p class="kicker" data-en="Before your visit" data-fr="Avant votre visite">Before your visit</p><h2 data-en="Know what to ask" data-fr="Préparez vos questions">Know what to ask</h2><p class="muted" data-en="A useful website can help patients prepare without attempting to diagnose or replace advice from a dental professional." data-fr="Un site utile aide les patients à se préparer sans poser de diagnostic ni remplacer les conseils d'un professionnel dentaire.">A useful website can help patients prepare without attempting to diagnose or replace advice from a dental professional.</p></div><div class="soft-panel"><div class="list"><div class="list-item"><span class="tick">1</span><div><strong data-en="Describe your concern" data-fr="Décrivez votre besoin">Describe your concern</strong><p data-en="Mention the reason for your visit when contacting the clinic." data-fr="Expliquez le motif de votre visite lors de la prise de contact.">Mention the reason for your visit when contacting the clinic.</p></div></div><div class="list-item"><span class="tick">2</span><div><strong data-en="Share relevant information privately" data-fr="Transmettez les informations utiles en privé">Share relevant information privately</strong><p data-en="Ask the clinic how to securely provide medical history or documents; avoid sending sensitive details through a public form." data-fr="Demandez au cabinet comment transmettre de façon sécurisée vos antécédents ou documents ; évitez les formulaires publics pour les données sensibles.">Ask the clinic how to securely provide medical history or documents; avoid sending sensitive details through a public form.</p></div></div><div class="list-item"><span class="tick">3</span><div><strong data-en="Confirm the appointment" data-fr="Confirmez le rendez-vous">Confirm the appointment</strong><p data-en="Wait for confirmation from the clinic before travelling." data-fr="Attendez la confirmation du cabinet avant de vous déplacer.">Wait for confirmation from the clinic before travelling.</p></div></div></div></div></div></section>
+<section class="content" id="contact"><div class="wrap"><div class="cta"><div><p class="kicker" style="color:#7ef0e1" data-en="Contact" data-fr="Contact">Contact</p><h2 data-en="Ready to take the next step?" data-fr="Prêt à passer à l'étape suivante ?">Ready to take the next step?</h2><p data-en="This is a portfolio demo. For a real clinic, replace this contact route with the clinic's verified phone number, address, opening hours, and appointment process." data-fr="Ceci est une démonstration de portfolio. Pour un vrai cabinet, remplacez ces coordonnées par son numéro, son adresse, ses horaires et sa procédure de rendez-vous vérifiés.">This is a portfolio demo. For a real clinic, replace this contact route with the clinic's verified phone number, address, opening hours, and appointment process.</p></div><a class="btn primary" href="https://wa.me/213666780427" target="_blank" rel="noopener noreferrer" data-en="Contact the website developer ↗" data-fr="Contacter le développeur du site ↗">Contact the website developer ↗</a></div><p class="demo-note" data-en="Demo disclaimer: BrightSmile Dental is a fictional concept name. This page does not represent a real clinic or provide medical advice." data-fr="Mention de démonstration : BrightSmile Dentaire est un nom fictif. Cette page ne représente pas un vrai cabinet et ne fournit pas de conseils médicaux.">Demo disclaimer: BrightSmile Dental is a fictional concept name. This page does not represent a real clinic or provide medical advice.</p></div></section>
+<div class="contact-strip"><div class="wrap contact-inner"><p data-en="Need a website for your clinic?" data-fr="Besoin d'un site pour votre cabinet ?">Need a website for your clinic?</p><a class="project-link" href="https://wa.me/213666780427" target="_blank" rel="noopener noreferrer" data-en="Discuss a project ↗" data-fr="Parlons de votre projet ↗">Discuss a project ↗</a></div></div>
+</main><footer><div class="wrap foot"><span>© <span id="year"></span> BrightSmile Dental · Website concept</span><a href="https://github.com/wahidsalah996-debug/portfolio" target="_blank" rel="noopener noreferrer">Created by Wahid Salah ↗</a></div></footer>
 <script>
-const PHONE = "213666780427"; // رقم واتساب العيادة بدون + أو صفر: غيّره
-const T = {
-ar:{title:"عيادة الابتسامة | طب الأسنان",brand:"عيادة الابتسامة",
- h1:"ابتسامة صحية تبدأ بزيارة واحدة",sub:"رعاية أسنان متكاملة للكبار والأطفال، بأجهزة حديثة وأسعار واضحة.",
- cta:"احجز موعدك",call:"اتصل الآن",f1:"سنوات خبرة",f2:"مريض راضٍ",f3:"تقييم المرضى",
- bt:"احجز موعدًا",ln:"الاسم",lp:"رقم الهاتف",ls:"الخدمة",send:"أرسل الطلب عبر واتساب",
- st:"خدماتنا",s1:"تنظيف وتلميع",d1:"إزالة الجير والتصبغات للحفاظ على لثة سليمة.",
- s2:"تبييض الأسنان",d2:"أسنان أفتح بجلسة واحدة وبأمان.",s3:"زراعة الأسنان",d3:"تعويض دائم يشبه السن الطبيعي.",
- s4:"تقويم الأسنان",d4:"تقويم معدني وشفاف حسب حالتك.",s5:"أسنان الأطفال",d5:"فحص لطيف يجعل الطفل يحب العيادة.",
- s6:"طوارئ الأسنان",d6:"ألم أو كسر؟ نستقبلك في نفس اليوم.",
- wt:"لماذا نحن؟",w1:"أطباء مختصون",w1d:"فريق بشهادات وخبرة في كل تخصص.",w2:"تعقيم صارم",w2d:"أدوات معقمة لكل مريض وفق المعايير.",w3:"أسعار واضحة",w3d:"تعرف التكلفة قبل بدء العلاج.",
- rt:"آراء المرضى",r1:"“تجربة مريحة وطبيب يشرح كل خطوة. أنصح بها.”",c1:"سارة، مريضة تبييض",
- r2:"“ابني كان يخاف الأطباء، والآن يطلب زيارة العيادة.”",c2:"كريم، والد مريض",r3:"“مواعيد دقيقة ونتيجة تقويم ممتازة.”",c3:"ياسمين، مريضة تقويم",
- ct:"زرنا",hl:"ساعات العمل:",hv:"السبت – الخميس، 9:00 – 18:00",al:"العنوان:",av:"اكتب عنوان العيادة هنا",pl:"الهاتف:",
- rights:"© 2026 عيادة الابتسامة. جميع الحقوق محفوظة.",msg:"مرحبًا، أود حجز موعد.",kn:"الاسم",kp:"الهاتف",ks:"الخدمة"},
-fr:{title:"Clinique Sourire | Soins dentaires",brand:"Clinique Sourire",
- h1:"Un sourire en bonne santé commence par une visite",sub:"Soins dentaires complets pour adultes et enfants, équipements modernes et tarifs clairs.",
- cta:"Prendre rendez-vous",call:"Appeler",f1:"ans d'expérience",f2:"patients satisfaits",f3:"note des patients",
- bt:"Prendre rendez-vous",ln:"Nom",lp:"Téléphone",ls:"Soin souhaité",send:"Envoyer via WhatsApp",
- st:"Nos soins",s1:"Détartrage et polissage",d1:"Élimine tartre et taches pour des gencives saines.",
- s2:"Blanchiment dentaire",d2:"Des dents plus claires, en une séance et en toute sécurité.",s3:"Implants dentaires",d3:"Une solution durable qui imite la dent naturelle.",
- s4:"Orthodontie",d4:"Appareils métalliques ou transparents selon votre cas.",s5:"Dentisterie pédiatrique",d5:"Un examen en douceur pour que l'enfant aime venir.",
- s6:"Urgences dentaires",d6:"Douleur ou dent cassée ? Reçu le jour même.",
- wt:"Pourquoi nous choisir ?",w1:"Praticiens spécialisés",w1d:"Une équipe diplômée et expérimentée dans chaque spécialité.",w2:"Stérilisation stricte",w2d:"Instruments stérilisés pour chaque patient, aux normes.",w3:"Tarifs transparents",w3d:"Vous connaissez le coût avant le début du traitement.",
- rt:"Avis des patients",r1:"« Une expérience agréable, le docteur explique chaque étape. Je recommande. »",c1:"Sara, blanchiment",
- r2:"« Mon fils avait peur des dentistes, il réclame maintenant la clinique. »",c2:"Karim, parent",r3:"« Rendez-vous ponctuels et excellent résultat orthodontique. »",c3:"Yasmine, orthodontie",
- ct:"Nous trouver",hl:"Horaires :",hv:"Samedi – Jeudi, 9h00 – 18h00",al:"Adresse :",av:"Écrivez l'adresse de la clinique ici",pl:"Téléphone :",
- rights:"© 2026 Clinique Sourire. Tous droits réservés.",msg:"Bonjour, je souhaite prendre rendez-vous.",kn:"Nom",kp:"Téléphone",ks:"Soin"},
-en:{title:"Smile Dental Clinic | Dental care",brand:"Smile Dental Clinic",
- h1:"A healthy smile starts with one visit",sub:"Complete dental care for adults and children, with modern equipment and clear prices.",
- cta:"Book your visit",call:"Call now",f1:"years of experience",f2:"happy patients",f3:"patient rating",
- bt:"Book an appointment",ln:"Name",lp:"Phone number",ls:"Service",send:"Send via WhatsApp",
- st:"Our services",s1:"Cleaning and polishing",d1:"Removes tartar and stains for healthier gums.",
- s2:"Teeth whitening",d2:"Brighter teeth in a single, safe session.",s3:"Dental implants",d3:"A permanent replacement that looks like a natural tooth.",
- s4:"Orthodontics",d4:"Metal or clear braces, based on your case.",s5:"Children's dentistry",d5:"A gentle check-up so kids enjoy coming in.",
- s6:"Dental emergencies",d6:"In pain or chipped a tooth? We see you the same day.",
- wt:"Why choose us",w1:"Specialist dentists",w1d:"A qualified, experienced team in every specialty.",w2:"Strict sterilization",w2d:"Sterilized instruments for every patient, to standard.",w3:"Clear pricing",w3d:"You know the cost before treatment starts.",
- rt:"Patient reviews",r1:"“A comfortable visit, and the dentist explained every step. Recommended.”",c1:"Sara, whitening patient",
- r2:"“My son used to fear dentists. Now he asks to come back.”",c2:"Karim, parent",r3:"“On-time appointments and excellent braces results.”",c3:"Yasmine, braces patient",
- ct:"Visit us",hl:"Opening hours:",hv:"Saturday – Thursday, 9:00 – 18:00",al:"Address:",av:"Write the clinic address here",pl:"Phone:",
- rights:"© 2026 Smile Dental Clinic. All rights reserved.",msg:"Hello, I would like to book an appointment.",kn:"Name",kp:"Phone",ks:"Service"}
-};
-let cur = "ar";
-function setLang(l){
-  cur = l;
-  const d = document.documentElement;
-  d.lang = l; d.dir = l === "ar" ? "rtl" : "ltr";
-  document.title = T[l].title;
-  document.querySelectorAll("[data-i]").forEach(e => e.textContent = T[l][e.dataset.i]);
-  document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.l === l));
-  document.getElementById("wa").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(T[l].msg);
-  try { localStorage.setItem("lang", l); } catch (e) {}
-}
-document.querySelectorAll(".lang button").forEach(b => b.onclick = () => setLang(b.dataset.l));
-document.getElementById("book").addEventListener("submit", ev => {
-  ev.preventDefault();
-  const t = T[cur], s = document.getElementById("s");
-  const text = t.msg + "\n" + t.kn + ": " + document.getElementById("n").value +
-    "\n" + t.kp + ": " + document.getElementById("p").value +
-    "\n" + t.ks + ": " + s.options[s.selectedIndex].textContent;
-  window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text), "_blank");
-});
-let saved = "ar";
-try { saved = localStorage.getItem("lang") || "ar"; } catch (e) {}
-setLang(T[saved] ? saved : "ar");
+const langButton=document.getElementById('language');let lang='en';
+function setLang(next){lang=next;document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-fr]').forEach(el=>{el.innerHTML=el.dataset[lang]});langButton.textContent=lang==='en'?'FR':'EN';}
+langButton.addEventListener('click',()=>setLang(lang==='en'?'fr':'en'));
+const menu=document.getElementById('menu'),links=document.getElementById('links');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'Close ✕':'Menu ☰'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu ☰'}));document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-</body>
-  </html>
+</body></html>
