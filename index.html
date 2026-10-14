@@ -1,79 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>salah achouri | مطوّر ويب</title>
-<style>
-  :root { --main:#1a73e8; --dark:#0f172a; --soft:#f1f5f9; }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family:Tahoma, Arial, sans-serif; background:var(--soft); color:var(--dark); line-height:1.7; }
-  .hero { background:linear-gradient(135deg,#1a73e8,#0b3d91); color:#fff; text-align:center; padding:50px 20px 60px; }
-  .avatar { width:90px; height:90px; border-radius:50%; background:#fff; color:var(--main); font-size:40px; font-weight:bold; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; }
-  .hero h1 { margin:0; font-size:28px; }
-  .hero p { margin:8px 0 20px; opacity:.9; }
-  .btn { display:inline-block; padding:12px 24px; border-radius:30px; text-decoration:none; font-weight:bold; margin:5px; }
-  .btn-light { background:#fff; color:var(--main); }
-  .btn-outline { border:2px solid #fff; color:#fff; }
-  section { max-width:700px; margin:0 auto; padding:30px 20px; }
-  h2 { text-align:center; margin:0 0 15px; }
-  h2::after { content:""; display:block; width:50px; height:4px; background:var(--main); border-radius:2px; margin:8px auto 0; }
-  .about, .tags { text-align:center; }
-  .tags span { display:inline-block; background:#fff; margin:5px; padding:8px 18px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,.08); }
-  .cards { display:grid; gap:15px; }
-  .card { background:#fff; padding:20px; border-radius:14px; box-shadow:0 2px 8px rgba(0,0,0,.08); }
-  .card h3 { margin:0 0 6px; color:var(--main); }
-  .card p { margin:0; }
-  .card a { color:var(--main); font-weight:bold; }
-  footer { background:var(--dark); color:#cbd5e1; text-align:center; padding:25px 20px; }
-  footer a { color:#fff; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="description" content="الموقع الشخصي لسلاح عاشوري — مطوّر ويب يهتم ببناء مواقع سريعة، واضحة ومتجاوبة مع جميع الشاشات.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Salah Achouri | مطوّر ويب">
+  <meta property="og:description" content="أصنع تجارب ويب بسيطة وعملية، بتصميم متجاوب واهتمام بالتفاصيل.">
+  <title>Salah Achouri | مطوّر ويب</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1120;
+      --surface: #111a2d;
+      --surface-2: #162239;
+      --text: #edf3ff;
+      --muted: #a7b4ca;
+      --accent: #67e8f9;
+      --accent-2: #8b9cff;
+      --border: rgba(184, 205, 240, .14);
+      --shadow: 0 22px 60px rgba(0, 0, 0, .24);
+      --radius: 22px;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(77, 103, 255, .13), transparent 36rem),
+        radial-gradient(ellipse at 95% 25%, rgba(40, 210, 225, .08), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .skip-link { position: absolute; top: -60px; right: 16px; z-index: 100; background: var(--accent); color: #08111e; padding: 10px 16px; border-radius: 10px; }
+    .skip-link:focus { top: 12px; }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(11, 17, 32, .82); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 800; letter-spacing: .2px; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 13px; color: #08111e; background: linear-gradient(135deg, var(--accent), var(--accent-2)); font-size: 1rem; }
+    .nav-links { display: flex; align-items: center; gap: 25px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--accent); }
+    .menu-toggle { display: none; border: 1px solid var(--border); color: var(--text); background: var(--surface); border-radius: 12px; padding: 8px 12px; font: inherit; cursor: pointer; }
+    .hero { padding: 96px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 64px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--accent); background: rgba(103, 232, 249, .08); border: 1px solid rgba(103, 232, 249, .2); border-radius: 999px; padding: 6px 13px; font-size: .86rem; }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 14px var(--accent); }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.7rem); line-height: 1.2; letter-spacing: -1.7px; margin: 22px 0 18px; }
+    .gradient-text { background: linear-gradient(100deg, var(--accent), #aab5ff 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { color: var(--muted); max-width: 650px; font-size: clamp(1rem, 2vw, 1.13rem); margin: 0 0 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 9px; min-height: 48px; padding: 11px 20px; border-radius: 13px; text-decoration: none; font-weight: 700; border: 1px solid transparent; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #07111e; background: linear-gradient(110deg, var(--accent), #a5b4fc); }
+    .button-secondary { border-color: var(--border); background: rgba(255,255,255,.025); color: var(--text); }
+    .hero-art { min-height: 310px; display: grid; place-items: center; position: relative; }
+    .orbit { width: min(290px, 75vw); aspect-ratio: 1; border: 1px solid rgba(103,232,249,.25); border-radius: 50%; display: grid; place-items: center; position: relative; background: radial-gradient(circle, rgba(103,232,249,.11), transparent 67%); }
+    .orbit::before, .orbit::after { content: ""; position: absolute; inset: 17px; border: 1px dashed rgba(165,180,252,.3); border-radius: 50%; }
+    .orbit::after { inset: -15px; border-style: solid; border-color: rgba(165,180,252,.12); }
+    .monogram { display: grid; place-items: center; width: 142px; height: 142px; border-radius: 40px; transform: rotate(-7deg); background: linear-gradient(145deg, #1d3150, #101a2d); border: 1px solid rgba(103,232,249,.4); box-shadow: 0 0 70px rgba(103,232,249,.12), var(--shadow); font-size: 3.3rem; font-weight: 900; color: var(--accent); }
+    .float-tag { position: absolute; padding: 9px 13px; border: 1px solid var(--border); border-radius: 12px; background: rgba(17,26,45,.94); color: var(--muted); font-size: .84rem; box-shadow: var(--shadow); }
+    .tag-one { top: 20px; right: 0; } .tag-two { bottom: 18px; left: 0; }
+    .section { padding: 70px 0; }
+    .section-head { max-width: 680px; margin-bottom: 30px; }
+    .section-kicker { color: var(--accent); font-size: .88rem; font-weight: 800; margin: 0 0 5px; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.3; margin: 0 0 12px; }
+    .section-intro { margin: 0; color: var(--muted); }
+    .about-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; padding: 30px; border: 1px solid var(--border); border-radius: var(--radius); background: linear-gradient(135deg, rgba(22,34,57,.8), rgba(17,26,45,.72)); }
+    .about-panel p { margin: 0; color: var(--muted); }
+    .principles { display: grid; gap: 14px; }
+    .principle { display: flex; gap: 12px; align-items: flex-start; }
+    .check { display: grid; place-items: center; flex: 0 0 28px; height: 28px; border-radius: 9px; background: rgba(103,232,249,.1); color: var(--accent); font-weight: 900; }
+    .principle strong { display: block; margin-bottom: 2px; }
+    .principle span:last-child { color: var(--muted); font-size: .91rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill { padding: 10px 16px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); color: #dce7fa; }
+    .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .project-card { display: flex; flex-direction: column; min-height: 265px; padding: 23px; border-radius: var(--radius); border: 1px solid var(--border); background: linear-gradient(160deg, rgba(22,34,57,.95), rgba(14,22,38,.95)); transition: transform .22s ease, border-color .22s ease; }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(103,232,249,.45); }
+    .project-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: rgba(103,232,249,.09); border: 1px solid rgba(103,232,249,.16); color: var(--accent); font-size: 1.3rem; margin-bottom: 17px; }
+    .project-card h3 { margin: 0 0 8px; font-size: 1.13rem; }
+    .project-card p { color: var(--muted); font-size: .94rem; margin: 0 0 20px; }
+    .project-link { margin-top: auto; color: var(--accent); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; width: fit-content; }
+    .project-link:hover { text-decoration: underline; }
+    .contact-panel { position: relative; overflow: hidden; padding: clamp(28px, 5vw, 52px); border-radius: 28px; border: 1px solid rgba(103,232,249,.24); background: linear-gradient(120deg, rgba(22,34,57,.98), rgba(19,40,61,.86)); }
+    .contact-panel::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; left: -100px; top: -130px; background: rgba(103,232,249,.08); filter: blur(4px); pointer-events: none; }
+    .contact-panel p { color: var(--muted); max-width: 650px; }
+    .contact-panel .actions { margin-top: 22px; }
+    .site-footer { padding: 26px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .footer-inner a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero { padding-top: 65px; }
+      .hero-art { min-height: 270px; }
+      .orbit { width: 230px; }
+      .monogram { width: 115px; height: 115px; font-size: 2.8rem; border-radius: 32px; }
+      .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: calc(100% + 1px); right: 0; left: 0; padding: 14px 22px 20px; background: rgba(11,17,32,.98); border-bottom: 1px solid var(--border); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; }
+      .hero { padding: 52px 0 38px; }
+      h1 { letter-spacing: -1px; }
+      .hero-art { min-height: 230px; }
+      .about-panel { grid-template-columns: 1fr; padding: 22px; }
+      .projects { grid-template-columns: 1fr; }
+      .project-card { min-height: auto; }
+      .section { padding: 50px 0; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#home" aria-label="Salah Achouri - الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true">SA</span>
+        <span>Salah Achouri</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks">القائمة ☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">نبذة عني</a>
+        <a href="#skills">مهاراتي</a>
+        <a href="#projects">أعمالي</a>
+        <a href="#contact">تواصل معي</a>
+      </div>
+    </nav>
+  </header>
 
-<div class="hero">
-  <div class="avatar">S</div>
-  <h1>salah achouri</h1>
-  <p>مطوّر ويب مبتدئ | صفحات سريعة تعمل على الجوال</p>
-  <a class="btn btn-light" href="mailto:wahidsalah996@gmail.com">راسلني</a>
-  <a class="btn btn-outline" href="#services">خدماتي</a>
-</div>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">مطوّر ويب · الجزائر</span>
+          <h1>أحوّل الأفكار إلى<br><span class="gradient-text">تجارب ويب أنيقة.</span></h1>
+          <p class="hero-copy">مرحباً، أنا صلاح عاشوري. أعمل على بناء صفحات ومواقع ويب بسيطة، واضحة ومتجاوبة مع الهاتف والحاسوب، مع اهتمام بالتفاصيل وسهولة الاستخدام.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#projects">اكتشف أعمالي <span aria-hidden="true">←</span></a>
+            <a class="button button-secondary" href="mailto:wahidsalah996@gmail.com">✉ راسلني</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit">
+            <div class="monogram">SA</div>
+            <span class="float-tag tag-one">HTML · CSS</span>
+            <span class="float-tag tag-two">تصميم متجاوب</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="about">
-  <h2>نبذة عني</h2>
-  <p>أتعلم تطوير المواقع وأبني صفحات بسيطة ونظيفة وسريعة، وألتزم بالمواعيد وأتواصل بوضوح.</p>
-</section>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">نبذة عني</p>
+          <h2>تصميم واضح، وتجربة سهلة.</h2>
+          <p class="section-intro">أركّز على بناء واجهات تساعد الزائر على فهم المحتوى والوصول إلى ما يحتاجه دون تعقيد.</p>
+        </div>
+        <div class="about-panel">
+          <p>أتعلم وأطوّر مهاراتي في تصميم وتطوير الويب من خلال مشاريع عملية، من الصفحات الشخصية إلى المواقع التعريفية للأنشطة والخدمات. أؤمن أن الموقع الجيد يجمع بين المظهر الجميل، السرعة، وسهولة التصفح على مختلف الأجهزة.</p>
+          <div class="principles">
+            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>متوافق مع الهاتف</strong><span>تخطيط مرن للشاشات الصغيرة والكبيرة.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>واجهة واضحة</strong><span>تنظيم مريح للمحتوى وروابط مباشرة.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>اهتمام بالتفاصيل</strong><span>ألوان متناسقة وتصفح قابل للاستخدام.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="tags">
-  <h2>مهاراتي</h2>
-  <span>HTML</span>
-  <span>CSS</span>
-  <span>JavaScript (أساسيات)</span>
-  <span>تصميم متجاوب مع الجوال</span>
-  <span>GitHub</span>
-</section>
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">مهاراتي</p>
+          <h2>الأدوات التي أعمل بها</h2>
+          <p class="section-intro">أطوّر هذه المهارات باستمرار من خلال التطبيق وبناء المشاريع.</p>
+        </div>
+        <div class="skills" aria-label="قائمة المهارات">
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript — أساسيات</span>
+          <span class="skill">تصميم متجاوب</span>
+          <span class="skill">Git وGitHub</span>
+          <span class="skill">واجهات RTL عربية</span>
+        </div>
+      </div>
+    </section>
 
-<section id="services">
-  <h2>خدماتي</h2>
-  <div class="cards">
-    <div class="card"><h3>صفحة هبوط</h3><p>صفحة واحدة تعرّف بنشاطك وتجمع الطلبات.</p></div>
-    <div class="card"><h3>موقع تعريفي</h3><p>موقع بسيط لعرض خدمات نشاطك التجاري.</p></div>
-    <div class="card"><h3>تعديل مواقع</h3><p>تحسين الألوان والتنسيق وإصلاح أخطاء بسيطة.</p></div>
-  </div>
-</section>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">أعمال مختارة</p>
+          <h2>مشاريع أعمل على تطويرها</h2>
+          <p class="section-intro">تعرّف على بعض المشاريع الموجودة في حسابي على GitHub.</p>
+        </div>
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">✦</div>
+            <h3>الموقع الشخصي</h3>
+            <p>مساحة شخصية للتعريف بي وبمهاراتي ومشاركة المشاريع التي أعمل عليها.</p>
+            <a class="project-link" href="https://github.com/wahidsalah996-debug/portfolio" target="_blank" rel="noopener noreferrer">عرض المستودع <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">＋</div>
+            <h3>موقع عيادة أسنان</h3>
+            <p>مشروع واجهة تعريفية لعيادة، مع إمكانية تطوير معلومات الخدمات وطرق التواصل.</p>
+            <a class="project-link" href="https://github.com/wahidsalah996-debug/dental-clinic" target="_blank" rel="noopener noreferrer">عرض المستودع <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">§</div>
+            <h3>موقع مكتب محاماة</h3>
+            <p>واجهة لموقع قانوني لعرض الخدمات والمعلومات الأساسية بشكل منظم.</p>
+            <a class="project-link" href="https://github.com/wahidsalah996-debug/lawyer-website" target="_blank" rel="noopener noreferrer">عرض المستودع <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>أعمالي</h2>
-  <div class="cards">
-    <div class="card"><h3>صفحة تعريف شخصية</h3><p>هذه الصفحة التي تتصفحها الآن.</p></div>
-    <div class="card"><h3>صفحة هبوط لعيادة أسنان</h3><p>بثلاث لغات مع حجز عبر واتساب. <a href="dental-clinic.html">عرض الصفحة ←</a></p></div>
-  </div>
-</section>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <p class="section-kicker">لنتواصل</p>
+          <h2>هل لديك فكرة لموقع؟</h2>
+          <p>إذا أردت صفحة تعريفية أو موقعاً بسيطاً لنشاطك، يمكنك مراسلتي لنتحدث عن فكرتك والخطوات المناسبة لتنفيذها.</p>
+          <div class="actions">
+            <a class="button button-primary" href="mailto:wahidsalah996@gmail.com">wahidsalah996@gmail.com</a>
+            <a class="button button-secondary" href="https://github.com/wahidsalah996-debug" target="_blank" rel="noopener noreferrer">حسابي على GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>تواصل معي: <a href="mailto:wahidsalah996@gmail.com">wahidsalah996@gmail.com</a></p>
-  <p>© 2026 salah achouri</p>
-</footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Salah Achouri. جميع الحقوق محفوظة.</span>
+      <a href="#home">العودة إلى الأعلى ↑</a>
+    </div>
+  </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? 'إغلاق ✕' : 'القائمة ☰';
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = 'القائمة ☰';
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
