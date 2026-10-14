@@ -21,7 +21,8 @@ I build responsive website concepts and explore practical digital tools for smal
 ## Current toolkit
 
 - **Web:** HTML, CSS, JavaScript, responsive layouts, accessibility fundamentals
-- **Workflow:** Git, GitHub, iterative development
+- **Workflow:** Git, GitHub, iterative development, testing and refinement
+- **Development approach:** Hands-on coding with AI tools used as support when useful; generated suggestions are reviewed and adjusted
 - **Interests:** legal research, public law, AI-enabled tools, and digital products
 
 ## Contact
