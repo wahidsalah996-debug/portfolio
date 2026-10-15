@@ -5,20 +5,38 @@ Based in Algeria · Open to freelance projects and collaboration
 
 I build responsive website concepts and explore practical digital tools for small businesses and professional services. This repository is the central portfolio and contains the live demos linked below.
 
-## Live portfolio
+## Start here
 
-**[Open the portfolio website](https://wahidsalah996-debug.github.io/portfolio/)** · [View my GitHub profile](https://github.com/wahidsalah996-debug) · [View my CV](https://wahidsalah996-debug.github.io/portfolio/cv.html)
+- **[Live portfolio](https://wahidsalah996-debug.github.io/portfolio/)**
+- [CV](https://wahidsalah996-debug.github.io/portfolio/cv.html)
+- [GitHub profile and all repositories](https://github.com/wahidsalah996-debug)
 
 ## Featured projects
 
-| Project | What it demonstrates | Demo / source |
-| --- | --- | --- |
-| Dental clinic website | Service presentation, responsive layout, and contact journey | [Live demo](https://wahidsalah996-debug.github.io/portfolio/dental-clinic.html) · [Source repository](https://github.com/wahidsalah996-debug/dental-clinic) |
-| Lawyer website | Professional-services information architecture and clear inquiry path | [Live demo](https://wahidsalah996-debug.github.io/portfolio/lawyer.html) · [Source repository](https://github.com/wahidsalah996-debug/lawyer-website) |
-| Qadayai — legal case organizer | Arabic-first legal-tech interface concept for cases, tasks, and documents | [Live demo](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) · [Source file](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) |
-| Clinic management concept | Exploration of digital workflows for a clinic | [Repository](https://github.com/wahidsalah996-debug/clinic.htmll) |
+| Project | Purpose | Demo | Source repository |
+| --- | --- | --- | --- |
+| Dental clinic website | Responsive website concept for a dental practice | [Open demo](https://wahidsalah996-debug.github.io/portfolio/dental-clinic.html) | [dental-clinic](https://github.com/wahidsalah996-debug/dental-clinic) |
+| Lawyer website | Professional website concept for a law office | [Open demo](https://wahidsalah996-debug.github.io/portfolio/lawyer.html) | [lawyer-website](https://github.com/wahidsalah996-debug/lawyer-website) |
+| Qadayai | Arabic-first legal-tech prototype for organizing cases, tasks, and documents | [Open demo](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) | [Source file](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) |
+| Clinic management | Early concept for digital clinic workflows | — | [clinic.htmll](https://github.com/wahidsalah996-debug/clinic.htmll) |
 
-## Current toolkit
+## Repository directory
+
+The following table maps the current repositories to their project and suggests a consistent naming convention. The current repository names have **not** been changed by this README update.
+
+| Current repository | Project | Suggested clean name |
+| --- | --- | --- |
+| `portfolio` | Main portfolio and live demo pages | `portfolio` |
+| `clinic.html` | Clinic website project | `clinic-website` |
+| `dental-clinic` | Dental clinic website | `dental-clinic` |
+| `lawyer-website` | Lawyer website | `lawyer-website` |
+| `Dontist.website` | Dental website / duplicate candidate to review | `dentist-website` |
+| `clinic.htmll` | Clinic management concept | `clinic-management` |
+| `law.html` | Law website project | `law-office-website` |
+
+**Before renaming:** review `clinic.html` and `Dontist.website` to confirm whether they contain unique work or duplicate other projects. Keep them until that is checked. Renaming a repository changes its GitHub URL; update external links, deployment settings, and any local Git remotes as needed.
+
+## Toolkit and workflow
 
 - **Web:** HTML, CSS, JavaScript, responsive layouts, accessibility fundamentals
 - **Workflow:** Git, GitHub, iterative development, testing and refinement
@@ -34,7 +52,3 @@ I build responsive website concepts and explore practical digital tools for smal
 ## Quality and scope
 
 These are portfolio demos and prototypes, not claims of completed client deployments. Before production use, verify all business information, test forms and links, and review accessibility, privacy, security, and applicable professional requirements. Do not enter real patient or confidential legal-client data into prototype applications.
-
----
-
-If you spot a problem or have a collaboration idea, feel free to get in touch.
