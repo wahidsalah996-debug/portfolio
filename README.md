@@ -17,7 +17,7 @@ I build responsive website concepts and explore practical digital tools for smal
 | --- | --- | --- | --- |
 | Dental clinic website | Responsive website concept for a dental practice | [Open demo](https://wahidsalah996-debug.github.io/portfolio/dental-clinic.html) | [dental-clinic](https://github.com/wahidsalah996-debug/dental-clinic) |
 | Lawyer website | Professional website concept for a law office | [Open demo](https://wahidsalah996-debug.github.io/portfolio/lawyer.html) | [lawyer-website](https://github.com/wahidsalah996-debug/lawyer-website) |
-| Qadayai | Arabic-first legal-tech prototype for organizing cases, tasks, and documents | [Open demo](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) | [Source file](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) |
+| Qadayai | Arabic-first legal-tech prototype for organizing cases, tasks, and documents | [Open demo](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) | [Portfolio source](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) · [Standalone source](https://github.com/wahidsalah996-debug/law.html/blob/main/Lawe.html) |
 | Clinic management | Early concept for digital clinic workflows | — | [clinic.htmll](https://github.com/wahidsalah996-debug/clinic.htmll) |
 
 ## Repository directory
@@ -32,7 +32,7 @@ The following table maps the current repositories to their project and suggests 
 | `lawyer-website` | Lawyer website | `lawyer-website` |
 | `Dontist.website` | Dental website / duplicate candidate to review | `dentist-website` |
 | `clinic.htmll` | Clinic management concept | `clinic-management` |
-| `law.html` | Law website project | `law-office-website` |
+| `law.html` | Qadayai standalone Arabic legal case-management prototype | `qadayai-legal-case-organizer` |
 
 **Before renaming:** review `clinic.html` and `Dontist.website` to confirm whether they contain unique work or duplicate other projects. Keep them until that is checked. Renaming a repository changes its GitHub URL; update external links, deployment settings, and any local Git remotes as needed.
 
