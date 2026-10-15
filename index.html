@@ -356,7 +356,7 @@
     pageLanguage = next;
     document.documentElement.lang = next;
     document.body.dir = next === 'ar' ? 'rtl' : 'ltr';
-    textNodes.forEach(item => { const leading = item.original.match(/^\\s*/)[0], trailing = item.original.match(/\\s*$/)[0]; item.node.nodeValue = leading + (next === 'ar' ? arabicDictionary[item.key] : item.key) + trailing; });
+    textNodes.forEach(item => { const leading = item.original.match(/^\s*/)[0], trailing = item.original.match(/\s*$/)[0]; item.node.nodeValue = leading + (next === 'ar' ? arabicDictionary[item.key] : item.key) + trailing; });
     languageButton.textContent = next === 'en' ? 'العربية' : 'English';
     languageButton.setAttribute('aria-label', next === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية');
   }
