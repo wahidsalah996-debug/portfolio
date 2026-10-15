@@ -20,7 +20,7 @@ This repository brings together selected web projects, reusable website template
 | Qadayai — Legal Case Organizer | Arabic-first interface for organizing matters, tasks, and document records | [View project](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) | [Portfolio source](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) · [Standalone source](https://github.com/wahidsalah996-debug/law.html/blob/main/Lawe.html) |
 | Clinic Management Starter | Generator for a React/TypeScript frontend, FastAPI backend, and PostgreSQL-backed workflow application | Source repository | [clinic.htmll](https://github.com/wahidsalah996-debug/clinic.htmll) |
 | Arabic Dental Website | Arabic-language dental-practice landing-page template | Source file | [clinic.html](https://github.com/wahidsalah996-debug/clinic.html) |
-| Dentist Website Template | Alternative dental-practice website implementation | Source repository | [Dontist.website](https://github.com/wahidsalah996-debug/Dontist.website) |
+| DentoCare — Dental Website Template | Multilingual dental-practice website with service discovery and a customization inquiry path | [View project](https://wahidsalah996-debug.github.io/portfolio/dentist-template.html) | [Dontist.website](https://github.com/wahidsalah996-debug/Dontist.website) |
 
 ## Skills and workflow
 
