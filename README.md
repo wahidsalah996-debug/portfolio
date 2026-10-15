@@ -1,54 +1,41 @@
-# Wahid Salah — Portfolio
+# Wahid Salah — Web Development & Digital Product Portfolio
 
-**Web development · Legal-tech concepts · Digital experiences**  
-Based in Algeria · Open to freelance projects and collaboration
+**Responsive websites · Legal technology · Business workflow tools**  
+Based in Algeria · Available for freelance projects and collaboration
 
-I build responsive website concepts and explore practical digital tools for small businesses and professional services. This repository is the central portfolio and contains the live demos linked below.
+This repository brings together selected web projects, reusable website templates, and digital-product interfaces. It is organized to make the work easy to review, discuss, and adapt to clearly defined client requirements.
 
-## Start here
+## Portfolio links
 
-- **[Live portfolio](https://wahidsalah996-debug.github.io/portfolio/)**
-- [CV](https://wahidsalah996-debug.github.io/portfolio/cv.html)
-- [GitHub profile and all repositories](https://github.com/wahidsalah996-debug)
+- **Live portfolio:** https://wahidsalah996-debug.github.io/portfolio/
+- **CV:** https://wahidsalah996-debug.github.io/portfolio/cv.html
+- **GitHub profile:** https://github.com/wahidsalah996-debug
 
-## Featured projects
+## Selected work
 
-| Project | Purpose | Demo | Source repository |
+| Project | Value | Preview | Source |
 | --- | --- | --- | --- |
-| Dental clinic website | Responsive website concept for a dental practice | [Open demo](https://wahidsalah996-debug.github.io/portfolio/dental-clinic.html) | [dental-clinic](https://github.com/wahidsalah996-debug/dental-clinic) |
-| Lawyer website | Professional website concept for a law office | [Open demo](https://wahidsalah996-debug.github.io/portfolio/lawyer.html) | [lawyer-website](https://github.com/wahidsalah996-debug/lawyer-website) |
-| Qadayai | Arabic-first legal-tech prototype for organizing cases, tasks, and documents | [Open demo](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) | [Portfolio source](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) · [Standalone source](https://github.com/wahidsalah996-debug/law.html/blob/main/Lawe.html) |
-| Clinic management | Early concept for digital clinic workflows | — | [clinic.htmll](https://github.com/wahidsalah996-debug/clinic.htmll) |
+| Dental Clinic Website | Responsive website template for dental practices, including service sections, FAQs, and appointment-oriented calls to action | [View project](https://wahidsalah996-debug.github.io/portfolio/dental-clinic.html) | [dental-clinic](https://github.com/wahidsalah996-debug/dental-clinic) |
+| Legal Practice Website | Website template for legal practices, with practice-area information and a clear consultation journey | [View project](https://wahidsalah996-debug.github.io/portfolio/lawyer.html) | [lawyer-website](https://github.com/wahidsalah996-debug/lawyer-website) |
+| Qadayai — Legal Case Organizer | Arabic-first interface for organizing matters, tasks, and document records | [View project](https://wahidsalah996-debug.github.io/portfolio/qadayai.html) | [Portfolio source](https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html) · [Standalone source](https://github.com/wahidsalah996-debug/law.html/blob/main/Lawe.html) |
+| Clinic Management Starter | Generator for a React/TypeScript frontend, FastAPI backend, and PostgreSQL-backed workflow application | Source repository | [clinic.htmll](https://github.com/wahidsalah996-debug/clinic.htmll) |
+| Arabic Dental Website | Arabic-language dental-practice landing-page template | Source file | [clinic.html](https://github.com/wahidsalah996-debug/clinic.html) |
+| Dentist Website Template | Alternative dental-practice website implementation | Source repository | [Dontist.website](https://github.com/wahidsalah996-debug/Dontist.website) |
 
-## Repository directory
+## Skills and workflow
 
-The following table maps the current repositories to their project and suggests a consistent naming convention. The current repository names have **not** been changed by this README update.
+- **Front-end:** HTML, CSS, JavaScript, responsive layouts, Arabic/RTL interfaces, and accessibility fundamentals
+- **Product thinking:** information architecture, conversion-focused calls to action, and clear user journeys
+- **Workflow:** Git, GitHub, iterative implementation, code review, and refinement
+- **Approach:** hands-on coding with AI tools used as support where useful; generated suggestions are reviewed and adjusted
 
-| Current repository | Project | Suggested clean name |
-| --- | --- | --- |
-| `portfolio` | Main portfolio and live demo pages | `portfolio` |
-| `clinic.html` | Clinic website project | `clinic-website` |
-| `dental-clinic` | Dental clinic website | `dental-clinic` |
-| `lawyer-website` | Lawyer website | `lawyer-website` |
-| `Dontist.website` | Dental website / duplicate candidate to review | `dentist-website` |
-| `clinic.htmll` | Clinic management concept | `clinic-management` |
-| `law.html` | Qadayai standalone Arabic legal case-management prototype | `qadayai-legal-case-organizer` |
+## Customization and delivery
 
-**Before renaming:** review `clinic.html` and `Dontist.website` to confirm whether they contain unique work or duplicate other projects. Keep them until that is checked. Renaming a repository changes its GitHub URL; update external links, deployment settings, and any local Git remotes as needed.
+Projects can be adapted to a client's branding, content, language, hosting environment, and integration requirements. Before launch, confirm the scope, replace sample business information with verified content, test forms and links, and review accessibility, privacy, security, and applicable professional requirements.
 
-## Toolkit and workflow
-
-- **Web:** HTML, CSS, JavaScript, responsive layouts, accessibility fundamentals
-- **Workflow:** Git, GitHub, iterative development, testing and refinement
-- **Development approach:** Hands-on coding with AI tools used as support when useful; generated suggestions are reviewed and adjusted
-- **Interests:** legal research, public law, AI-enabled tools, and digital products
+The legal case organizer and clinic-management starter require additional implementation, testing, and security review before they can handle confidential legal matters or real patient data. Website templates also need client-approved content and correctly configured contact or booking workflows.
 
 ## Contact
 
-- **WhatsApp:** [+213 666 780 427](https://wa.me/213666780427)
 - **Email:** [wahidsalah996@gmail.com](mailto:wahidsalah996@gmail.com)
 - **GitHub:** [wahidsalah996-debug](https://github.com/wahidsalah996-debug)
-
-## Quality and scope
-
-These are portfolio demos and prototypes, not claims of completed client deployments. Before production use, verify all business information, test forms and links, and review accessibility, privacy, security, and applicable professional requirements. Do not enter real patient or confidential legal-client data into prototype applications.
