@@ -47,7 +47,7 @@ Available work can include:
 
 Before any sale or client handoff, agree in writing on the scope, price, delivery date, revisions, hosting responsibilities, third-party assets, source-code access, license or transfer of rights, and post-launch support. Public repository visibility does not itself define a commercial license.
 
-The website templates are suitable starting points for customization, but sample brand details must be replaced and all links and forms tested for the client. Qadayai and the clinic-management generator are application starters that need additional implementation, functional testing, and security/privacy review before production use; they are not offered as ready-to-use systems for confidential legal or patient data.
+The website templates are designed for client customization: configure the client's approved brand identity, verify all content, and test every link, form, and integration before launch. Qadayai and the clinic-management generator are application starters that need additional implementation, functional testing, and security/privacy review before production use; they are not offered as ready-to-use systems for confidential legal or patient data.
 
 ## Contact
 
