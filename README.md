@@ -35,6 +35,20 @@ Projects can be adapted to a client's branding, content, language, hosting envir
 
 The legal case organizer and clinic-management starter require additional implementation, testing, and security review before they can handle confidential legal matters or real patient data. Website templates also need client-approved content and correctly configured contact or booking workflows.
 
+## Commercial services
+
+Available work can include:
+- **Website customization:** adapt a dental, legal-practice, or small-business template to the client's approved brand, content, and visual identity.
+- **Multilingual and responsive presentation:** Arabic/RTL, English, French, and layouts tailored for mobile, tablet, and desktop.
+- **Launch setup:** configure approved contact links, inquiry forms, hosting, domain settings, and basic search metadata within the agreed scope.
+- **Ongoing refinement:** usability improvements, content updates, and maintenance by separate agreement.
+
+## Delivery and licensing
+
+Before any sale or client handoff, agree in writing on the scope, price, delivery date, revisions, hosting responsibilities, third-party assets, source-code access, license or transfer of rights, and post-launch support. Public repository visibility does not itself define a commercial license.
+
+The website templates are suitable starting points for customization, but sample brand details must be replaced and all links and forms tested for the client. Qadayai and the clinic-management generator are application starters that need additional implementation, functional testing, and security/privacy review before production use; they are not offered as ready-to-use systems for confidential legal or patient data.
+
 ## Contact
 
 - **Email:** [wahidsalah996@gmail.com](mailto:wahidsalah996@gmail.com)
