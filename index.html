@@ -205,6 +205,18 @@
     }
     .project-card-qadayai .project-link-primary:hover { background: rgba(117,229,223,.16); }
     .project-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 15px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .service-card { min-height: 286px; }
+    .service-card h3 { font-size: 1.18rem; line-height: 1.35; }
+    .service-card p { line-height: 1.68; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; padding-top: 16px; }
+    .service-tags span { border: 1px solid var(--border); border-radius: 999px; padding: 5px 9px; font-size: .76rem; color: #dce7fa; background: rgba(255,255,255,.025); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
+    .process-step { position: relative; padding: 23px 20px; border: 1px solid var(--border); border-radius: 18px; background: linear-gradient(155deg, rgba(20,35,58,.82), rgba(12,22,38,.88)); min-height: 218px; }
+    .process-number { display: grid; place-items: center; width: 43px; height: 43px; border: 1px solid rgba(117,229,223,.26); border-radius: 13px; background: rgba(117,229,223,.09); color: var(--accent); font-weight: 850; font-size: .9rem; margin-bottom: 18px; }
+    .process-step h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .process-step p { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.65; }
+
     .project-link { color: var(--accent); font-weight: 750; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; width: fit-content; font-size: .9rem; }
     .project-link:hover { text-decoration: underline; }
     .note { margin-top: 20px; color: var(--muted); font-size: .88rem; }
@@ -222,6 +234,8 @@
       .orbit { width: 230px; }
       .monogram { width: 115px; height: 115px; font-size: 2.8rem; border-radius: 32px; }
       .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .project-card-qadayai { gap: 18px; }
     }
     @media (max-width: 620px) {
@@ -235,8 +249,9 @@
       h1 { letter-spacing: -1.4px; }
       .hero-art { min-height: 230px; }
       .about-panel { grid-template-columns: 1fr; padding: 22px; }
-      .projects { grid-template-columns: 1fr; }
+      .projects, .services-grid, .process-grid { grid-template-columns: 1fr; }
       .project-card { min-height: auto; }
+      .process-step { min-height: 0; }
       .project-card-qadayai { grid-column: auto; grid-template-columns: 1fr; gap: 18px; padding: 17px; }
       .project-qadayai-visual .project-preview { aspect-ratio: 16 / 10; }
       .project-qadayai-content { padding: 0; }
@@ -272,7 +287,18 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="home">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Responsive websites · Clinics · Legal practices · Small businesses</span>
@@ -296,77 +322,45 @@
       </div>
     </section>
 
-    <section class="section" id="about">
+<section class="section" id="services">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker">A little about me</p>
-          <h2>A practical, transparent approach to web design.</h2>
-          <p class="section-intro">Clear structure, useful content, and a straightforward path for every visitor.</p>
+          <p class="section-kicker">Services</p>
+          <h2>Websites designed for your next customer.</h2>
+          <p class="section-intro">Practical web work for small businesses that need clear information, a professional first impression, and an obvious next step.</p>
         </div>
-        <div class="about-panel">
-          <p>I create and refine website projects through hands-on coding, using AI-assisted tools when useful and reviewing the output rather than relying on generated code blindly. I focus on readable layouts, clear calls to action, and experiences that work across screen sizes. Before a project begins, I prefer to agree on the deliverables, the content supplied by the client, the required languages, and any integrations that fall outside the agreed scope.</p>
-          <div class="principles">
-            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>Mobile-first thinking</strong><span>Layouts designed to work on phones, tablets, and desktops.</span></div></div>
-            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>Clear user journeys</strong><span>Easy-to-find information and contact options.</span></div></div>
-            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>Careful iteration</strong><span>Improving structure, readability, and visual consistency.</span></div></div>
-          </div>
+        <div class="services-grid">
+          <article class="project-card service-card">
+            <div class="project-top"><div class="project-icon" aria-hidden="true">＋</div><span class="project-type">Healthcare</span></div>
+            <h3>Clinic and healthcare websites</h3>
+            <p>Patient-friendly service pages, FAQs, and appointment-request paths for dental and healthcare practices. Real clinic details and health-related claims must be verified with the client.</p>
+            <div class="service-tags"><span>Responsive layout</span><span>Patient FAQs</span><span>Appointment pathway</span></div>
+          </article>
+          <article class="project-card service-card">
+            <div class="project-top"><div class="project-icon" aria-hidden="true">§</div><span class="project-type">Professional services</span></div>
+            <h3>Law firm and service websites</h3>
+            <p>Clear practice-area pages and professional service sites that organize complex information and help visitors understand the next step.</p>
+            <div class="service-tags"><span>Service pages</span><span>Clear navigation</span><span>Arabic / RTL</span></div>
+          </article>
+          <article class="project-card service-card">
+            <div class="project-top"><div class="project-icon" aria-hidden="true">↗</div><span class="project-type">Landing pages</span></div>
+            <h3>Landing pages and website refreshes</h3>
+            <p>Focused landing pages, responsive layout improvements, and content-structure refinements for small business websites, with deliverables agreed before work starts.</p>
+            <div class="service-tags"><span>Conversion-focused layout</span><span>Responsive fixes</span><span>Content hierarchy</span></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="education">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Education &amp; perspective</p>
-          <h2>Law and AI bring structure to my approach.</h2>
-          <p class="section-intro">My academic background helps me organize complex information and think carefully about clarity, accuracy, and how people use digital tools.</p>
-        </div>
-        <div class="about-panel">
-          <div>
-            <p style="color:var(--accent);font-weight:800;margin-bottom:8px">LAW &amp; LEGAL RESEARCH</p>
-            <h3 style="margin:0 0 10px">Master’s degree in Public Law</h3>
-            <p>Training in legal analysis and structured research—useful context for legal-service websites and information-heavy projects.</p>
-          </div>
-          <div>
-            <p style="color:var(--accent-2);font-weight:800;margin-bottom:8px">AI &amp; DIGITAL SYSTEMS</p>
-            <h3 style="margin:0 0 10px">Bachelor’s degree (Licence) in Artificial Intelligence</h3>
-            <p>Academic grounding in AI and digital systems, complemented by practical website and prototype projects.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Skills & tools</p>
-          <h2>Tools and capabilities</h2>
-          <p class="section-intro">A focused toolkit for responsive websites, multilingual interfaces, and clear service information. I take on work that matches my current skills and agree on scope before starting.</p>
-        </div>
-        <div class="skills" aria-label="Skills">
-          <span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript fundamentals</span>
-          <span class="skill">Responsive design</span><span class="skill">Git & GitHub</span><span class="skill">Accessible UI basics</span>
-          <span class="skill">Arabic / RTL layouts</span><span class="skill">AI-assisted coding & review</span><span class="skill">Legal research & structured analysis</span><span class="skill">AI and digital-product exploration</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
+<section class="section" id="projects">
       <div class="container">
         <div class="section-head">
           <p class="section-kicker">Selected work</p>
-          <h2>Projects built around real business needs</h2>
-          <p class="section-intro">Explore the website templates, digital products, and source repositories. Each project can be tailored to verified client requirements.</p>
+          <h2>Selected projects, built around real business needs.</h2>
+          <p class="section-intro">Explore live demos and source repositories. The website examples are customizable templates; product prototypes and starter projects are labelled clearly with their current scope.</p>
         </div>
         <div class="projects">
-          <article class="project-card">
-            <div class="project-preview"><img src="./assets/project-portfolio.svg" alt="Personal developer portfolio preview: Law, AI and digital projects" width="1200" height="675" loading="lazy" decoding="async"></div>
-            <div class="project-top"><div class="project-icon" aria-hidden="true">✦</div><span class="project-type">Portfolio</span></div>
-            <h3>Personal Portfolio</h3>
-            <p>A central showcase for selected work, development skills, and a straightforward contact path for potential clients.</p>
-            <div class="project-links"><a class="project-link" href="https://github.com/wahidsalah996-debug/portfolio" target="_blank" rel="noopener noreferrer">View source ↗</a></div>
-          </article>
-          <article class="project-card">
+<article class="project-card">
             <div class="project-preview"><img src="./assets/project-dental-clinic.svg" alt="Dental clinic website template preview with services and appointment button" width="1200" height="675" loading="lazy" decoding="async"></div>
             <div class="project-top"><div class="project-icon" aria-hidden="true">＋</div><span class="project-type">Healthcare</span></div>
             <h3>Dental Clinic Website</h3>
@@ -376,17 +370,7 @@
               <a class="project-link" href="https://github.com/wahidsalah996-debug/dental-clinic" target="_blank" rel="noopener noreferrer">Source code ↗</a>
             </div>
           </article>
-          <article class="project-card">
-            <div class="project-preview"><img src="./assets/project-dental-clinic.svg" alt="DentoCare dental-practice website template preview" width="1200" height="675" loading="lazy" decoding="async"></div>
-            <div class="project-top"><div class="project-icon" aria-hidden="true">✦</div><span class="project-type">Website template</span></div>
-            <h3>DentoCare — Dental Website Template</h3>
-            <p>A multilingual dental-practice website with an editorial layout, service discovery, patient-friendly information, and a customization inquiry path.</p>
-            <div class="project-links">
-              <a class="project-link" href="https://wahidsalah996-debug.github.io/portfolio/dentist-template.html" target="_blank" rel="noopener noreferrer">View website ↗</a>
-              <a class="project-link" href="https://github.com/wahidsalah996-debug/Dontist.website" target="_blank" rel="noopener noreferrer">Source code ↗</a>
-            </div>
-          </article>
-          <article class="project-card">
+<article class="project-card">
             <div class="project-preview"><img src="./assets/project-lawyer.svg" alt="Legal practice website template preview with gold scales symbol" width="1200" height="675" loading="lazy" decoding="async"></div>
             <div class="project-top"><div class="project-icon" aria-hidden="true">§</div><span class="project-type">Professional services</span></div>
             <h3>Lawyer Website</h3>
@@ -396,7 +380,17 @@
               <a class="project-link" href="https://github.com/wahidsalah996-debug/lawyer-website" target="_blank" rel="noopener noreferrer">Source code ↗</a>
             </div>
           </article>
-          <article class="project-card project-card-qadayai">
+<article class="project-card">
+            <div class="project-preview"><img src="./assets/project-dentocare.svg" alt="DentoCare dental-practice website preview with a patient-friendly service layout" width="1200" height="675" loading="lazy" decoding="async"></div>
+            <div class="project-top"><div class="project-icon" aria-hidden="true">✦</div><span class="project-type">Website template</span></div>
+            <h3>DentoCare — Dental Website Template</h3>
+            <p>A multilingual dental-practice website with an editorial layout, service discovery, patient-friendly information, and a customization inquiry path.</p>
+            <div class="project-links">
+              <a class="project-link" href="https://wahidsalah996-debug.github.io/portfolio/dentist-template.html" target="_blank" rel="noopener noreferrer">View website ↗</a>
+              <a class="project-link" href="https://github.com/wahidsalah996-debug/Dontist.website" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+            </div>
+          </article>
+<article class="project-card project-card-qadayai">
             <div class="project-qadayai-visual">
               <div class="project-preview"><img src="./assets/project-qadayai.svg" alt="Qadayai prototype dashboard showing Arabic right-to-left case records, tasks, and document organization" width="1200" height="675" loading="lazy" decoding="async"></div>
               <div class="project-qadayai-caption"><span class="caption-dot" aria-hidden="true"></span><span>Browser-based concept · Arabic / RTL</span></div>
@@ -418,7 +412,7 @@
               </div>
             </div>
           </article>
-          <article class="project-card">
+<article class="project-card">
             <div class="project-preview"><img src="./assets/project-clinic-management.svg" alt="Clinic management system dashboard preview" width="1200" height="675" loading="lazy" decoding="async"></div>
             <div class="project-top"><div class="project-icon" aria-hidden="true">▦</div><span class="project-type">Full-stack starter</span></div>
             <h3>Clinic Management System</h3>
@@ -426,11 +420,82 @@
             <div class="project-links"><a class="project-link" href="https://github.com/wahidsalah996-debug/clinic.htmll" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
           </article>
         </div>
-        <p class="note">Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.</p>
+        <p class="note">Project note: These are portfolio demos and prototypes, not claims of completed client engagements. Before a handoff, content, integrations, ownership, and launch requirements are agreed with the client.</p>
       </div>
     </section>
 
-    <section class="section" id="contact">
+<section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">How I work</p>
+          <h2>A clear process, from brief to handoff.</h2>
+          <p class="section-intro">A shared understanding of scope and deliverables helps keep the work practical and predictable.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span class="process-number">01</span><h3>Understand the brief</h3><p>Clarify the audience, goal, pages, assets, required languages, and what success looks like.</p></article>
+          <article class="process-step"><span class="process-number">02</span><h3>Plan the structure</h3><p>Agree on information order, content priorities, visual direction, and the deliverables in scope.</p></article>
+          <article class="process-step"><span class="process-number">03</span><h3>Build and review</h3><p>Implement the agreed layout and review navigation, links, content, and responsive behavior.</p></article>
+          <article class="process-step"><span class="process-number">04</span><h3>Handoff clearly</h3><p>Share the agreed project files or repository and note any remaining launch or integration steps.</p></article>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">A little about me</p>
+          <h2>A practical, transparent approach to web design.</h2>
+          <p class="section-intro">Clear structure, useful content, and a straightforward path for every visitor.</p>
+        </div>
+        <div class="about-panel">
+          <p>I create and refine website projects through hands-on coding, using AI-assisted tools when useful and reviewing the output rather than relying on generated code blindly. I focus on readable layouts, clear calls to action, and experiences that work across screen sizes. Before a project begins, I prefer to agree on the deliverables, the content supplied by the client, the required languages, and any integrations that fall outside the agreed scope.</p>
+          <div class="principles">
+            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>Mobile-first thinking</strong><span>Layouts designed to work on phones, tablets, and desktops.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>Clear user journeys</strong><span>Easy-to-find information and contact options.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✓</span><div><strong>Careful iteration</strong><span>Improving structure, readability, and visual consistency.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Skills & tools</p>
+          <h2>Tools and capabilities</h2>
+          <p class="section-intro">A focused toolkit for responsive websites, multilingual interfaces, and clear service information. I take on work that matches my current skills and agree on scope before starting.</p>
+        </div>
+        <div class="skills" aria-label="Skills">
+          <span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript fundamentals</span>
+          <span class="skill">Responsive design</span><span class="skill">Git & GitHub</span><span class="skill">Accessible UI basics</span>
+          <span class="skill">Arabic / RTL layouts</span><span class="skill">AI-assisted coding & review</span><span class="skill">Legal research & structured analysis</span><span class="skill">AI and digital-product exploration</span>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="education">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Education &amp; perspective</p>
+          <h2>Law and AI bring structure to my approach.</h2>
+          <p class="section-intro">My academic background helps me organize complex information and think carefully about clarity, accuracy, and how people use digital tools.</p>
+        </div>
+        <div class="about-panel">
+          <div>
+            <p style="color:var(--accent);font-weight:800;margin-bottom:8px">LAW &amp; LEGAL RESEARCH</p>
+            <h3 style="margin:0 0 10px">Master’s degree in Public Law</h3>
+            <p>Training in legal analysis and structured research—useful context for legal-service websites and information-heavy projects.</p>
+          </div>
+          <div>
+            <p style="color:var(--accent-2);font-weight:800;margin-bottom:8px">AI &amp; DIGITAL SYSTEMS</p>
+            <h3 style="margin:0 0 10px">Bachelor’s degree (Licence) in Artificial Intelligence</h3>
+            <p>Academic grounding in AI and digital systems, complemented by practical website and prototype projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="contact">
       <div class="container">
         <div class="contact-panel">
           <p class="section-kicker">Next steps</p>
@@ -471,7 +536,7 @@
   </script>
 
   <script id="arabic-language-support">
-  const arabicDictionary = {"Where":"حيث","Skip to content":"تجاوز إلى المحتوى","Main navigation":"التنقل الرئيسي","Wahid Salah home":"الرئيسية — وحيد صلاح","Menu ☰":"القائمة ☰","Profile":"نبذة عني","Education":"الدراسة","Skills":"المهارات","Projects":"المشاريع","Contact":"تواصل","Web development · Based in Algeria · Open to projects":"تطوير الويب · الجزائر · متاح للمشاريع","Where ":"حيث ","law meets AI":"يلتقي القانون بالذكاء الاصطناعي","and digital innovation.":"والابتكار الرقمي.","I'm Wahid Salah. My profile brings together public law, artificial intelligence, and practical digital projects. I combine structured legal thinking with a technology-oriented perspective to make complex information clearer and digital experiences more useful.":"أنا وحيد صلاح. يجمع ملفي بين القانون العام والذكاء الاصطناعي والمشاريع الرقمية العملية. أدمج التفكير القانوني المنهجي مع منظور تقني لتبسيط المعلومات المعقدة وتقديم تجارب رقمية أكثر فائدة.","Explore my work":"استكشف أعمالي","Email me about a project ↗":"راسلني بخصوص مشروع ↗","Responsive layouts":"تصاميم متجاوبة","Clear calls to action":"دعوات واضحة لاتخاذ إجراء","Direct communication":"تواصل مباشر","Built for people":"مصمم لخدمة الناس","A little about me":"نبذة عني","Thoughtful design. Practical websites.":"تصميم مدروس. مواقع عملية.","I focus on making information easy to understand and the next step obvious for visitors.":"أركز على جعل المعلومات سهلة الفهم والخطوة التالية واضحة للزوار.","I build and refine web projects through hands-on coding, using AI tools as a supporting aid when useful—not as a substitute for reviewing the result. My projects range from personal portfolios to service-based websites. I aim to create online experiences that feel professional, work across screen sizes, and help people find the information they need. I value clear communication, practical testing, and continuous improvement.":"أبني مشاريع الويب وأطوّرها بكتابة الأكواد بنفسي، مع الاستعانة بأدوات الذكاء الاصطناعي عند الحاجة دون اعتبارها بديلاً عن مراجعة النتائج. تشمل مشاريعي معارض الأعمال ومواقع الخدمات. أسعى إلى تجارب رقمية احترافية تعمل على مختلف الشاشات وتساعد الزوار في العثور على المعلومات المطلوبة. أقدّر التواصل الواضح والاختبار العملي والتحسين المستمر.","Mobile-first thinking":"التصميم مع إعطاء الأولوية للهاتف","Layouts designed to work on phones, tablets, and desktops.":"تصاميم تعمل على الهواتف والأجهزة اللوحية والحواسيب.","Clear user journeys":"مسارات استخدام واضحة","Easy-to-find information and contact options.":"معلومات ووسائل تواصل يسهل العثور عليها.","Careful iteration":"تحسين تدريجي ومدروس","Improving structure, readability, and visual consistency.":"تحسين البنية وسهولة القراءة والاتساق البصري.","Academic interests":"اهتمامات أكاديمية","Law, technology, and practical problem-solving.":"القانون والتكنولوجيا وحل المشكلات عملياً.","An interdisciplinary direction connecting legal systems, structured research, and emerging digital tools.":"مسار متعدد التخصصات يربط الأنظمة القانونية بالبحث المنهجي والأدوات الرقمية الناشئة.","LAW & LEGAL RESEARCH":"القانون والبحث القانوني","Public law and legal analysis":"القانون العام والتحليل القانوني","Interests include public institutions, administrative frameworks, legal research, and explaining complex information clearly.":"تشمل الاهتمامات المؤسسات العامة والأطر الإدارية والبحث القانوني وشرح المعلومات المعقدة بوضوح.","AI & DIGITAL SYSTEMS":"الذكاء الاصطناعي والأنظمة الرقمية","Artificial intelligence and digital products":"الذكاء الاصطناعي والمنتجات الرقمية","Exploring practical web technologies and AI-related ideas to create useful, accessible digital experiences.":"استكشاف تقنيات الويب العملية وأفكار الذكاء الاصطناعي لبناء تجارب رقمية مفيدة وسهلة الوصول.","Skills & tools":"المهارات والأدوات","My current toolkit":"أدواتي ومهاراتي الحالية","These are the technologies and practices I use and continue to develop through hands-on work.":"هذه التقنيات والممارسات التي أستخدمها وأواصل تطويرها من خلال التطبيق العملي.","Responsive design":"التصميم المتجاوب","JavaScript fundamentals":"أساسيات JavaScript","Accessible UI basics":"أساسيات واجهات الاستخدام الميسّرة","AI-assisted coding & review":"البرمجة والمراجعة بمساعدة الذكاء الاصطناعي","Legal research & structured analysis":"البحث القانوني والتحليل المنهجي","AI and digital-product exploration":"استكشاف الذكاء الاصطناعي والمنتجات الرقمية","Selected work":"أعمال مختارة","Projects built around real business needs":"مشاريع تلبي احتياجات الأعمال","Explore the website templates, digital products, and source repositories. Each project can be tailored to verified client requirements.":"استكشف قوالب المواقع والمنتجات الرقمية ومستودعات المصدر. يمكن تخصيص كل مشروع وفق متطلبات العميل بعد التحقق منها.","Personal Portfolio":"معرض الأعمال الشخصي","A central showcase for selected work, development skills, and a straightforward contact path for potential clients.":"واجهة مركزية لعرض الأعمال المختارة ومهارات التطوير وتسهيل التواصل مع العملاء المحتملين.","View source ↗":"عرض الكود ↗","Healthcare":"الرعاية الصحية","Dental Clinic Website":"موقع عيادة أسنان","DentoCare — Dental Website Template":"DentoCare — قالب موقع لعيادة الأسنان","Website template":"قالب موقع إلكتروني","A multilingual dental-practice website with an editorial layout, service discovery, patient-friendly information, and a customization inquiry path.":"موقع متعدد اللغات لعيادة أسنان، بتصميم منظم وخدمات واضحة ومعلومات مفيدة ومسار لطلب التخصيص.","View website ↗":"عرض الموقع ↗","A responsive website template for dental practices, with service highlights, patient FAQs, and clear appointment pathways. Branding and booking integrations can be tailored to each clinic.":"قالب متجاوب لعيادات الأسنان يعرض الخدمات والأسئلة الشائعة ومسارات التواصل والحجز بوضوح، مع إمكانية تخصيص الهوية ووسائل الحجز لكل عيادة.","View project ↗":"عرض المشروع ↗","Source code ↗":"الكود المصدري ↗","Professional services":"الخدمات المهنية","Lawyer Website":"موقع مكتب محاماة","A polished website template for legal practices, with practice-area sections, professional information, and a clear consultation journey. Credentials and jurisdiction-specific content can be added after verification.":"قالب احترافي للمكاتب القانونية يعرض مجالات الممارسة والمعلومات المهنية ومسار الاستشارة بوضوح، مع إضافة المؤهلات والمحتوى الخاص بالاختصاص القضائي بعد التحقق منها.","Legal technology":"تقنيات قانونية","Interactive prototype":"نموذج تفاعلي أولي","Browser-based concept · Arabic / RTL":"تصور يعمل في المتصفح · واجهة عربية واتجاه من اليمين إلى اليسار","Qadayai — Legal Case Organizer":"قضاياي — منظّم الملفات القانونية","An Arabic-first legal workflow concept that brings case records, tasks, and document references into one clear, right-to-left workspace.":"تصور لسير عمل قانوني بواجهة عربية أولًا، يجمع ملفات القضايا والمهام ومراجع الوثائق ضمن مساحة واضحة تدعم اتجاه الكتابة من اليمين إلى اليسار.","Core features":"الميزات الأساسية","Case records":"ملفات القضايا","Tasks & deadlines":"المهام والآجال","Document register":"سجل الوثائق","Arabic / RTL":"العربية / اتجاه من اليمين إلى اليسار","Prototype status:":"حالة النموذج الأولي:","Local encryption is implemented, but security controls, backup and recovery, and privacy need a full review before confidential case data is used.":"التشفير المحلي مطبّق، لكن يجب إجراء مراجعة شاملة لضوابط الأمان والنسخ الاحتياطي والاستعادة والخصوصية قبل استخدام بيانات قضايا سرية.","Try the prototype ↗":"جرّب النموذج الأولي ↗","Review source ↗":"راجع الكود المصدري ↗"},"Full-stack starter":"بداية نظام متكامل","Clinic Management System":"نظام إدارة عيادة","A full-stack clinic-management starter generator for exploring appointments, patient records, and clinic workflows. Review the source, build the generated application, and complete security and privacy validation before any real patient information is used.":"مولّد لهيكل نظام متكامل لإدارة العيادات والمواعيد وسجلات المرضى. راجع المصدر وابنِ التطبيق الناتج وأكمل مراجعة الأمان والخصوصية قبل استخدام بيانات حقيقية.","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"ملاحظة: هذه أعمال مطوّرة ضمن معرض الأعمال وليست دراسات حالة لعملاء. يمكن الاتفاق على نطاق العمل والمحتوى والتكاملات ومتطلبات التشغيل والتحقق منها مع كل عميل.","Let's talk":"لنتحدث","Have a website idea?":"هل لديك فكرة لموقع؟","Tell me a little about your business, your goals, and what you need your website to do. We can discuss a practical next step with no obligation.":"أخبرني قليلاً عن نشاطك وأهدافك وما الذي تريد أن يحققه موقعك. يمكننا مناقشة خطوة عملية تالية دون أي التزام.","Send a project inquiry ↗":"أرسل استفساراً عن مشروع ↗","Send an email ↗":"أرسل بريداً إلكترونياً ↗","View CV ↗":"عرض السيرة الذاتية ↗","GitHub profile ↗":"حساب GitHub ↗","Back to top ↑":"العودة إلى الأعلى ↑","View repository ↗":"عرض المستودع ↗","Portfolio":"معرض الأعمال","Web":"الويب","Arabic / RTL layouts":"واجهات عربية وتنسيق RTL","Wahid Salah · Law × AI × Digital":"وحيد صلاح · قانون × ذكاء اصطناعي × رقمنة","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"متاحة للتخصيص حسب طلب العميل: يمكن تكييف كل موقع مع الهوية المعتمدة والمحتوى الموثوق واللغات المطلوبة وتكاملات التواصل أو الحجز المتفق عليها. يُحدد نطاق العمل ومتطلبات التسليم لكل طلب."};
+  const arabicDictionary = {"Where":"حيث","Skip to content":"تجاوز إلى المحتوى","Main navigation":"التنقل الرئيسي","Wahid Salah home":"الرئيسية — وحيد صلاح","Menu ☰":"القائمة ☰","Profile":"نبذة عني","Education":"الدراسة","Skills":"المهارات","Projects":"المشاريع","Contact":"تواصل","Web development · Based in Algeria · Open to projects":"تطوير الويب · الجزائر · متاح للمشاريع","Where ":"حيث ","law meets AI":"يلتقي القانون بالذكاء الاصطناعي","and digital innovation.":"والابتكار الرقمي.","I'm Wahid Salah. My profile brings together public law, artificial intelligence, and practical digital projects. I combine structured legal thinking with a technology-oriented perspective to make complex information clearer and digital experiences more useful.":"أنا وحيد صلاح. يجمع ملفي بين القانون العام والذكاء الاصطناعي والمشاريع الرقمية العملية. أدمج التفكير القانوني المنهجي مع منظور تقني لتبسيط المعلومات المعقدة وتقديم تجارب رقمية أكثر فائدة.","Explore my work":"استكشف أعمالي","Responsive layouts":"تصاميم متجاوبة","Clear calls to action":"دعوات واضحة لاتخاذ إجراء","Direct communication":"تواصل مباشر","Built for people":"مصمم لخدمة الناس","A little about me":"نبذة عني","Thoughtful design. Practical websites.":"تصميم مدروس. مواقع عملية.","I focus on making information easy to understand and the next step obvious for visitors.":"أركز على جعل المعلومات سهلة الفهم والخطوة التالية واضحة للزوار.","I build and refine web projects through hands-on coding, using AI tools as a supporting aid when useful—not as a substitute for reviewing the result. My projects range from personal portfolios to service-based websites. I aim to create online experiences that feel professional, work across screen sizes, and help people find the information they need. I value clear communication, practical testing, and continuous improvement.":"أبني مشاريع الويب وأطوّرها بكتابة الأكواد بنفسي، مع الاستعانة بأدوات الذكاء الاصطناعي عند الحاجة دون اعتبارها بديلاً عن مراجعة النتائج. تشمل مشاريعي معارض الأعمال ومواقع الخدمات. أسعى إلى تجارب رقمية احترافية تعمل على مختلف الشاشات وتساعد الزوار في العثور على المعلومات المطلوبة. أقدّر التواصل الواضح والاختبار العملي والتحسين المستمر.","Mobile-first thinking":"التصميم مع إعطاء الأولوية للهاتف","Layouts designed to work on phones, tablets, and desktops.":"تصاميم تعمل على الهواتف والأجهزة اللوحية والحواسيب.","Clear user journeys":"مسارات استخدام واضحة","Easy-to-find information and contact options.":"معلومات ووسائل تواصل يسهل العثور عليها.","Careful iteration":"تحسين تدريجي ومدروس","Improving structure, readability, and visual consistency.":"تحسين البنية وسهولة القراءة والاتساق البصري.","Academic interests":"اهتمامات أكاديمية","Law, technology, and practical problem-solving.":"القانون والتكنولوجيا وحل المشكلات عملياً.","An interdisciplinary direction connecting legal systems, structured research, and emerging digital tools.":"مسار متعدد التخصصات يربط الأنظمة القانونية بالبحث المنهجي والأدوات الرقمية الناشئة.","LAW & LEGAL RESEARCH":"القانون والبحث القانوني","Public law and legal analysis":"القانون العام والتحليل القانوني","Interests include public institutions, administrative frameworks, legal research, and explaining complex information clearly.":"تشمل الاهتمامات المؤسسات العامة والأطر الإدارية والبحث القانوني وشرح المعلومات المعقدة بوضوح.","AI & DIGITAL SYSTEMS":"الذكاء الاصطناعي والأنظمة الرقمية","Artificial intelligence and digital products":"الذكاء الاصطناعي والمنتجات الرقمية","Exploring practical web technologies and AI-related ideas to create useful, accessible digital experiences.":"استكشاف تقنيات الويب العملية وأفكار الذكاء الاصطناعي لبناء تجارب رقمية مفيدة وسهلة الوصول.","Skills & tools":"المهارات والأدوات","My current toolkit":"أدواتي ومهاراتي الحالية","These are the technologies and practices I use and continue to develop through hands-on work.":"هذه التقنيات والممارسات التي أستخدمها وأواصل تطويرها من خلال التطبيق العملي.","Responsive design":"التصميم المتجاوب","JavaScript fundamentals":"أساسيات JavaScript","Accessible UI basics":"أساسيات واجهات الاستخدام الميسّرة","AI-assisted coding & review":"البرمجة والمراجعة بمساعدة الذكاء الاصطناعي","Legal research & structured analysis":"البحث القانوني والتحليل المنهجي","AI and digital-product exploration":"استكشاف الذكاء الاصطناعي والمنتجات الرقمية","Selected work":"أعمال مختارة","Projects built around real business needs":"مشاريع تلبي احتياجات الأعمال","Explore the website templates, digital products, and source repositories. Each project can be tailored to verified client requirements.":"استكشف قوالب المواقع والمنتجات الرقمية ومستودعات المصدر. يمكن تخصيص كل مشروع وفق متطلبات العميل بعد التحقق منها.","View source ↗":"عرض الكود ↗","Healthcare":"الرعاية الصحية","Dental Clinic Website":"موقع عيادة أسنان","DentoCare — Dental Website Template":"DentoCare — قالب موقع لعيادة الأسنان","Website template":"قالب موقع إلكتروني","A multilingual dental-practice website with an editorial layout, service discovery, patient-friendly information, and a customization inquiry path.":"موقع متعدد اللغات لعيادة أسنان، بتصميم منظم وخدمات واضحة ومعلومات مفيدة ومسار لطلب التخصيص.","View website ↗":"عرض الموقع ↗","A responsive website template for dental practices, with service highlights, patient FAQs, and clear appointment pathways. Branding and booking integrations can be tailored to each clinic.":"قالب متجاوب لعيادات الأسنان يعرض الخدمات والأسئلة الشائعة ومسارات التواصل والحجز بوضوح، مع إمكانية تخصيص الهوية ووسائل الحجز لكل عيادة.","View project ↗":"عرض المشروع ↗","Source code ↗":"الكود المصدري ↗","Professional services":"الخدمات المهنية","Lawyer Website":"موقع مكتب محاماة","A polished website template for legal practices, with practice-area sections, professional information, and a clear consultation journey. Credentials and jurisdiction-specific content can be added after verification.":"قالب احترافي للمكاتب القانونية يعرض مجالات الممارسة والمعلومات المهنية ومسار الاستشارة بوضوح، مع إضافة المؤهلات والمحتوى الخاص بالاختصاص القضائي بعد التحقق منها.","Legal technology":"تقنيات قانونية","Interactive prototype":"نموذج تفاعلي أولي","Browser-based concept · Arabic / RTL":"تصور يعمل في المتصفح · واجهة عربية واتجاه من اليمين إلى اليسار","Qadayai — Legal Case Organizer":"قضاياي — منظّم الملفات القانونية","An Arabic-first legal workflow concept that brings case records, tasks, and document references into one clear, right-to-left workspace.":"تصور لسير عمل قانوني بواجهة عربية أولًا، يجمع ملفات القضايا والمهام ومراجع الوثائق ضمن مساحة واضحة تدعم اتجاه الكتابة من اليمين إلى اليسار.","Core features":"الميزات الأساسية","Case records":"ملفات القضايا","Tasks & deadlines":"المهام والآجال","Document register":"سجل الوثائق","Arabic / RTL":"العربية / اتجاه من اليمين إلى اليسار","Prototype status:":"حالة النموذج الأولي:","Local encryption is implemented, but security controls, backup and recovery, and privacy need a full review before confidential case data is used.":"التشفير المحلي مطبّق، لكن يجب إجراء مراجعة شاملة لضوابط الأمان والنسخ الاحتياطي والاستعادة والخصوصية قبل استخدام بيانات قضايا سرية.","Try the prototype ↗":"جرّب النموذج الأولي ↗","Review source ↗":"راجع الكود المصدري ↗","Full-stack starter":"بداية نظام متكامل","Clinic Management System":"نظام إدارة عيادة","A full-stack clinic-management starter generator for exploring appointments, patient records, and clinic workflows. Review the source, build the generated application, and complete security and privacy validation before any real patient information is used.":"مولّد لهيكل نظام متكامل لإدارة العيادات والمواعيد وسجلات المرضى. راجع المصدر وابنِ التطبيق الناتج وأكمل مراجعة الأمان والخصوصية قبل استخدام بيانات حقيقية.","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"متاحة للتخصيص حسب طلب العميل: يمكن تكييف كل موقع مع الهوية المعتمدة والمحتوى الموثوق واللغات المطلوبة وتكاملات التواصل أو الحجز المتفق عليها. يُحدد نطاق العمل ومتطلبات التسليم لكل طلب.","Let's talk":"لنتحدث","Have a website idea?":"هل لديك فكرة لموقع؟","Tell me a little about your business, your goals, and what you need your website to do. We can discuss a practical next step with no obligation.":"أخبرني قليلاً عن نشاطك وأهدافك وما الذي تريد أن يحققه موقعك. يمكننا مناقشة خطوة عملية تالية دون أي التزام.","Send a project inquiry ↗":"أرسل استفساراً عن مشروع ↗","Send an email ↗":"أرسل بريداً إلكترونياً ↗","View CV ↗":"عرض السيرة الذاتية ↗","GitHub profile ↗":"حساب GitHub ↗","Back to top ↑":"العودة إلى الأعلى ↑","View repository ↗":"عرض المستودع ↗","Portfolio":"معرض الأعمال","Web":"الويب","Arabic / RTL layouts":"واجهات عربية وتنسيق RTL","Wahid Salah · Law × AI × Digital":"وحيد صلاح · قانون × ذكاء اصطناعي × رقمنة","Services":"الخدمات","How I work":"طريقة عملي","About":"نبذة عني","Responsive websites · Clinics · Legal practices · Small businesses":"مواقع متجاوبة · عيادات · مكاتب قانونية · شركات صغيرة","Clear, professional":"مواقع واضحة واحترافية","websites that build trust.":"تبني الثقة.","I design and build responsive websites and landing pages for clinics, law firms, and small businesses. My work focuses on clear service information, mobile-friendly layouts, multilingual presentation, and practical next steps for visitors.":"أصمم وأنشئ مواقع متجاوبة وصفحات هبوط للعيادات ومكاتب المحاماة والشركات الصغيرة. أركز على وضوح الخدمات والتصميم المناسب للهاتف وتعدد اللغات وتسهيل الخطوة التالية للزائر.","View selected work":"استعرض الأعمال المختارة","Explore services ↓":"استكشف الخدمات ↓","Mobile-ready layouts":"تصاميم مناسبة للهاتف","Arabic · English · French":"العربية · الإنجليزية · الفرنسية","Clear project scope":"نطاق عمل واضح","Clear, practical design":"تصميم واضح وعملي","A practical, transparent approach to web design.":"نهج عملي وشفاف في تصميم المواقع.","Clear structure, useful content, and a straightforward path for every visitor.":"بنية واضحة ومحتوى مفيد ومسار سهل لكل زائر.","I create and refine website projects through hands-on coding, using AI-assisted tools when useful and reviewing the output rather than relying on generated code blindly. I focus on readable layouts, clear calls to action, and experiences that work across screen sizes. Before a project begins, I prefer to agree on the deliverables, the content supplied by the client, the required languages, and any integrations that fall outside the agreed scope.":"أنشئ مشاريع المواقع وأطوّرها من خلال العمل المباشر على الكود، مع الاستعانة بأدوات الذكاء الاصطناعي عند الحاجة ومراجعة النتائج بدل الاعتماد على الكود المولّد دون تحقق. أركز على سهولة القراءة ووضوح الإجراءات وتجربة تعمل على مختلف الشاشات. وقبل بدء المشروع، أحرص على الاتفاق على التسليمات والمحتوى الذي يقدمه العميل واللغات المطلوبة وأي تكاملات خارج النطاق المتفق عليه.","Tools and capabilities":"الأدوات والقدرات","A focused toolkit for responsive websites, multilingual interfaces, and clear service information. I take on work that matches my current skills and agree on scope before starting.":"مجموعة مركزة من الأدوات للمواقع المتجاوبة والواجهات متعددة اللغات ومعلومات الخدمات الواضحة. أقبل الأعمال التي تناسب مهاراتي الحالية وأتفق على نطاقها قبل البدء.","Selected projects, built around real business needs.":"مشاريع مختارة تلبي احتياجات الأعمال.","Explore live demos and source repositories. The website examples are customizable templates; product prototypes and starter projects are labelled clearly with their current scope.":"استكشف العروض الحية ومستودعات الكود المصدري. أمثلة المواقع قوالب قابلة للتخصيص، أما النماذج الأولية ومشاريع البداية فتوضح نطاقها وحالتها الحالية.","Project note: These are portfolio demos and prototypes, not claims of completed client engagements. Before a handoff, content, integrations, ownership, and launch requirements are agreed with the client.":"ملاحظة: هذه عروض ونماذج أولية ضمن معرض الأعمال وليست ادعاءات بتنفيذ أعمال لعملاء. قبل التسليم، يتم الاتفاق مع العميل على المحتوى والتكاملات والحقوق ومتطلبات الإطلاق.","Websites designed for your next customer.":"مواقع إلكترونية تساعدك على الوصول إلى عميلك التالي.","Practical web work for small businesses that need clear information, a professional first impression, and an obvious next step.":"خدمات ويب عملية للشركات الصغيرة التي تحتاج إلى معلومات واضحة وانطباع احترافي وخطوة تالية مباشرة.","Clinic and healthcare websites":"مواقع العيادات والرعاية الصحية","Patient-friendly service pages, FAQs, and appointment-request paths for dental and healthcare practices. Real clinic details and health-related claims must be verified with the client.":"صفحات خدمات وأسئلة شائعة ومسارات طلب موعد سهلة للمرضى في عيادات الأسنان والرعاية الصحية. يجب التحقق من بيانات العيادة والادعاءات الصحية مع العميل.","Responsive layout":"تصميم متجاوب","Patient FAQs":"أسئلة المرضى الشائعة","Appointment pathway":"مسار طلب الموعد","Law firm and service websites":"مواقع مكاتب المحاماة والخدمات المهنية","Clear practice-area pages and professional service sites that organize complex information and help visitors understand the next step.":"صفحات واضحة للمجالات القانونية ومواقع خدمات مهنية تنظم المعلومات المعقدة وتساعد الزائر على فهم الخطوة التالية.","Service pages":"صفحات الخدمات","Clear navigation":"تنقل واضح","Landing pages and website refreshes":"صفحات الهبوط وتحديث المواقع","Focused landing pages, responsive layout improvements, and content-structure refinements for small business websites, with deliverables agreed before work starts.":"صفحات هبوط مركزة وتحسينات للتصميم المتجاوب وتنظيم المحتوى لمواقع الشركات الصغيرة، مع الاتفاق على التسليمات قبل البدء.","Conversion-focused layout":"تصميم يركز على الإجراء المطلوب","Responsive fixes":"إصلاحات التصميم المتجاوب","Content hierarchy":"ترتيب المحتوى","A clear process, from brief to handoff.":"عملية واضحة من وصف المشروع إلى التسليم.","A shared understanding of scope and deliverables helps keep the work practical and predictable.":"يساعد الاتفاق على النطاق والتسليمات في جعل العمل عمليًا ومتوقعًا.","Understand the brief":"فهم متطلبات المشروع","Clarify the audience, goal, pages, assets, required languages, and what success looks like.":"تحديد الجمهور والهدف والصفحات والمواد واللغات المطلوبة ومعايير النجاح.","Plan the structure":"تخطيط البنية","Agree on information order, content priorities, visual direction, and the deliverables in scope.":"الاتفاق على ترتيب المعلومات وأولويات المحتوى والاتجاه البصري والتسليمات المشمولة.","Build and review":"التنفيذ والمراجعة","Implement the agreed layout and review navigation, links, content, and responsive behavior.":"تنفيذ التصميم المتفق عليه ومراجعة التنقل والروابط والمحتوى والاستجابة للشاشات.","Handoff clearly":"تسليم واضح","Share the agreed project files or repository and note any remaining launch or integration steps.":"تسليم ملفات المشروع أو المستودع المتفق عليه وتوضيح أي خطوات متبقية للإطلاق أو التكامل.","Education & perspective":"التعليم والخلفية","Law and AI bring structure to my approach.":"يساعد القانون والذكاء الاصطناعي في تنظيم منهجي.","My academic background helps me organize complex information and think carefully about clarity, accuracy, and how people use digital tools.":"تساعدني خلفيتي الأكاديمية على تنظيم المعلومات المعقدة والتفكير في الوضوح والدقة وكيفية استخدام الناس للأدوات الرقمية.","Master’s degree in Public Law":"ماجستير في القانون العام","Training in legal analysis and structured research—useful context for legal-service websites and information-heavy projects.":"خلفية في التحليل القانوني والبحث المنهجي، وهي مفيدة لمواقع الخدمات القانونية والمشاريع الغنية بالمعلومات.","Bachelor’s degree (Licence) in Artificial Intelligence":"ليسانس في الذكاء الاصطناعي","Academic grounding in AI and digital systems, complemented by practical website and prototype projects.":"أساس أكاديمي في الذكاء الاصطناعي والأنظمة الرقمية، تدعمه مشاريع عملية للمواقع والنماذج الأولية.","Next steps":"الخطوات التالية","Have a project brief?":"هل لديك وصف لمشروع؟","Share the goal, target audience, pages, required languages, and any examples you like. If you found this portfolio through Upwork, please keep all pre-contract project discussion in Upwork Messages.":"شارك هدف المشروع والجمهور المستهدف والصفحات واللغات المطلوبة وأي أمثلة تعجبك. إذا وصلت إلى هذا المعرض عبر Upwork، فيرجى إبقاء نقاش المشروع قبل التعاقد داخل رسائل Upwork.","Review selected work ↗":"راجع الأعمال المختارة ↗","Review my GitHub profile ↗":"راجع حسابي على GitHub ↗","Landing pages":"صفحات الهبوط"}
   const languageButton = document.getElementById('languageToggle');
   let pageLanguage = 'en';
   const textNodes = [];
