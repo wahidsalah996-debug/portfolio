@@ -125,6 +125,86 @@
     .project-type { color: var(--muted); font-size: .78rem; border: 1px solid var(--border); border-radius: 999px; padding: 4px 9px; }
     .project-card h3 { margin: 0 0 8px; font-size: 1.15rem; }
     .project-card p { color: var(--muted); font-size: .94rem; margin: 0 0 20px; }
+    .project-card-qadayai {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      align-items: center;
+      gap: 25px;
+      min-height: 0;
+      padding: 22px;
+      border-color: rgba(117,229,223,.32);
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(117,229,223,.10), transparent 58%),
+        linear-gradient(145deg, rgba(20,35,58,.98), rgba(8,25,40,.99));
+    }
+    .project-card-qadayai:hover,
+    .project-card-qadayai:focus-within {
+      border-color: rgba(117,229,223,.72);
+      box-shadow: 0 24px 54px rgba(0,0,0,.25);
+    }
+    .project-qadayai-visual { min-width: 0; }
+    .project-qadayai-visual .project-preview {
+      aspect-ratio: 4 / 3;
+      margin: 0;
+      border-radius: 17px;
+      border: 1px solid rgba(117,229,223,.22);
+      box-shadow: 0 16px 35px rgba(0,0,0,.18);
+    }
+    .project-qadayai-caption {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 2px 0;
+      color: var(--muted);
+      font-size: .79rem;
+      line-height: 1.4;
+    }
+    .project-qadayai-caption .caption-dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(117,229,223,.45);
+    }
+    .project-qadayai-content { display: flex; flex-direction: column; min-width: 0; height: 100%; padding: 4px 0; }
+    .project-card-qadayai .project-top { margin-bottom: 13px; }
+    .project-card-qadayai h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.22; margin-bottom: 11px; }
+    .project-card-qadayai .project-qadayai-lead { font-size: .97rem; line-height: 1.7; margin-bottom: 15px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+    .project-tags span {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(117,229,223,.2);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #d8f4f1;
+      background: rgba(117,229,223,.065);
+      font-size: .77rem;
+      line-height: 1.35;
+    }
+    .project-status {
+      margin: 0 0 18px;
+      padding: 11px 13px;
+      border-inline-start: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      color: var(--muted);
+      background: rgba(117,229,223,.055);
+      font-size: .81rem;
+      line-height: 1.55;
+    }
+    .project-status strong { color: var(--text); }
+    body[dir="rtl"] .project-status { border-radius: 10px 0 0 10px; }
+    .project-qadayai-content .project-links { margin-top: auto; gap: 16px; }
+    .project-card-qadayai .project-link-primary {
+      border: 1px solid rgba(117,229,223,.32);
+      border-radius: 11px;
+      padding: 9px 12px;
+      background: rgba(117,229,223,.09);
+      text-decoration: none;
+    }
+    .project-card-qadayai .project-link-primary:hover { background: rgba(117,229,223,.16); }
     .project-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 15px; }
     .project-link { color: var(--accent); font-weight: 750; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; width: fit-content; font-size: .9rem; }
     .project-link:hover { text-decoration: underline; }
@@ -143,6 +223,7 @@
       .orbit { width: 230px; }
       .monogram { width: 115px; height: 115px; font-size: 2.8rem; border-radius: 32px; }
       .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-card-qadayai { gap: 18px; }
     }
     @media (max-width: 620px) {
       .container { width: min(var(--max), calc(100% - 28px)); }
@@ -157,6 +238,10 @@
       .about-panel { grid-template-columns: 1fr; padding: 22px; }
       .projects { grid-template-columns: 1fr; }
       .project-card { min-height: auto; }
+      .project-card-qadayai { grid-column: auto; grid-template-columns: 1fr; gap: 18px; padding: 17px; }
+      .project-qadayai-visual .project-preview { aspect-ratio: 16 / 10; }
+      .project-qadayai-content { padding: 0; }
+      .project-card-qadayai h3 { font-size: 1.4rem; }
       .section { padding: 50px 0; }
       .footer-inner { flex-direction: column; text-align: center; }
     }
@@ -292,14 +377,26 @@
               <a class="project-link" href="https://github.com/wahidsalah996-debug/lawyer-website" target="_blank" rel="noopener noreferrer">Source code ↗</a>
             </div>
           </article>
-          <article class="project-card">
-            <div class="project-preview"><img src="./assets/project-qadayai.svg" alt="Qadayai Arabic-first legal workspace dashboard preview" width="1200" height="675" loading="lazy" decoding="async"></div>
-            <div class="project-top"><div class="project-icon" aria-hidden="true">⚖</div><span class="project-type">Legal technology</span></div>
-            <h3>Qadayai — Legal Case Organizer</h3>
-            <p>An Arabic-first legal workspace for organizing case files, tasks, and document records. The interface focuses on workflow clarity; authentication, access controls, secure storage, and production safeguards must be implemented and reviewed before handling confidential matters.</p>
-            <div class="project-links">
-              <a class="project-link" href="https://wahidsalah996-debug.github.io/portfolio/qadayai.html" target="_blank" rel="noopener noreferrer">View project ↗</a>
-              <a class="project-link" href="https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+          <article class="project-card project-card-qadayai">
+            <div class="project-qadayai-visual">
+              <div class="project-preview"><img src="./assets/project-qadayai.svg" alt="Qadayai prototype dashboard showing Arabic right-to-left case records, tasks, and document organization" width="1200" height="675" loading="lazy" decoding="async"></div>
+              <div class="project-qadayai-caption"><span class="caption-dot" aria-hidden="true"></span><span>Browser-based concept · Arabic / RTL</span></div>
+            </div>
+            <div class="project-qadayai-content">
+              <div class="project-top"><div class="project-icon" aria-hidden="true">⚖</div><span class="project-type">Interactive prototype</span></div>
+              <h3>Qadayai — Legal Case Organizer</h3>
+              <p class="project-qadayai-lead">An Arabic-first legal workflow concept that brings case records, tasks, and document references into one clear, right-to-left workspace.</p>
+              <div class="project-tags" aria-label="Core features">
+                <span>Case records</span>
+                <span>Tasks &amp; deadlines</span>
+                <span>Document register</span>
+                <span>Arabic / RTL</span>
+              </div>
+              <p class="project-status"><strong>Prototype status:</strong> Local encryption is implemented, but security controls, backup and recovery, and privacy need a full review before confidential case data is used.</p>
+              <div class="project-links">
+                <a class="project-link project-link-primary" href="https://wahidsalah996-debug.github.io/portfolio/qadayai.html" target="_blank" rel="noopener noreferrer">Try the prototype ↗</a>
+                <a class="project-link" href="https://github.com/wahidsalah996-debug/portfolio/blob/main/qadayai.html" target="_blank" rel="noopener noreferrer">Review source ↗</a>
+              </div>
             </div>
           </article>
           <article class="project-card">
@@ -357,7 +454,7 @@
   </script>
 
   <script id="arabic-language-support">
-  const arabicDictionary = {"Where":"حيث","Skip to content":"تجاوز إلى المحتوى","Main navigation":"التنقل الرئيسي","Wahid Salah home":"الرئيسية — وحيد صلاح","Menu ☰":"القائمة ☰","Profile":"نبذة عني","Education":"الدراسة","Skills":"المهارات","Projects":"المشاريع","Contact":"تواصل","Web development · Based in Algeria · Open to projects":"تطوير الويب · الجزائر · متاح للمشاريع","Where ":"حيث ","law meets AI":"يلتقي القانون بالذكاء الاصطناعي","and digital innovation.":"والابتكار الرقمي.","I'm Wahid Salah. My profile brings together public law, artificial intelligence, and practical digital projects. I combine structured legal thinking with a technology-oriented perspective to make complex information clearer and digital experiences more useful.":"أنا وحيد صلاح. يجمع ملفي بين القانون العام والذكاء الاصطناعي والمشاريع الرقمية العملية. أدمج التفكير القانوني المنهجي مع منظور تقني لتبسيط المعلومات المعقدة وتقديم تجارب رقمية أكثر فائدة.","Explore my work":"استكشف أعمالي","Email me about a project ↗":"راسلني بخصوص مشروع ↗","Responsive layouts":"تصاميم متجاوبة","Clear calls to action":"دعوات واضحة لاتخاذ إجراء","Direct communication":"تواصل مباشر","Built for people":"مصمم لخدمة الناس","A little about me":"نبذة عني","Thoughtful design. Practical websites.":"تصميم مدروس. مواقع عملية.","I focus on making information easy to understand and the next step obvious for visitors.":"أركز على جعل المعلومات سهلة الفهم والخطوة التالية واضحة للزوار.","I build and refine web projects through hands-on coding, using AI tools as a supporting aid when useful—not as a substitute for reviewing the result. My projects range from personal portfolios to service-based websites. I aim to create online experiences that feel professional, work across screen sizes, and help people find the information they need. I value clear communication, practical testing, and continuous improvement.":"أبني مشاريع الويب وأطوّرها بكتابة الأكواد بنفسي، مع الاستعانة بأدوات الذكاء الاصطناعي عند الحاجة دون اعتبارها بديلاً عن مراجعة النتائج. تشمل مشاريعي معارض الأعمال ومواقع الخدمات. أسعى إلى تجارب رقمية احترافية تعمل على مختلف الشاشات وتساعد الزوار في العثور على المعلومات المطلوبة. أقدّر التواصل الواضح والاختبار العملي والتحسين المستمر.","Mobile-first thinking":"التصميم مع إعطاء الأولوية للهاتف","Layouts designed to work on phones, tablets, and desktops.":"تصاميم تعمل على الهواتف والأجهزة اللوحية والحواسيب.","Clear user journeys":"مسارات استخدام واضحة","Easy-to-find information and contact options.":"معلومات ووسائل تواصل يسهل العثور عليها.","Careful iteration":"تحسين تدريجي ومدروس","Improving structure, readability, and visual consistency.":"تحسين البنية وسهولة القراءة والاتساق البصري.","Academic interests":"اهتمامات أكاديمية","Law, technology, and practical problem-solving.":"القانون والتكنولوجيا وحل المشكلات عملياً.","An interdisciplinary direction connecting legal systems, structured research, and emerging digital tools.":"مسار متعدد التخصصات يربط الأنظمة القانونية بالبحث المنهجي والأدوات الرقمية الناشئة.","LAW & LEGAL RESEARCH":"القانون والبحث القانوني","Public law and legal analysis":"القانون العام والتحليل القانوني","Interests include public institutions, administrative frameworks, legal research, and explaining complex information clearly.":"تشمل الاهتمامات المؤسسات العامة والأطر الإدارية والبحث القانوني وشرح المعلومات المعقدة بوضوح.","AI & DIGITAL SYSTEMS":"الذكاء الاصطناعي والأنظمة الرقمية","Artificial intelligence and digital products":"الذكاء الاصطناعي والمنتجات الرقمية","Exploring practical web technologies and AI-related ideas to create useful, accessible digital experiences.":"استكشاف تقنيات الويب العملية وأفكار الذكاء الاصطناعي لبناء تجارب رقمية مفيدة وسهلة الوصول.","Skills & tools":"المهارات والأدوات","My current toolkit":"أدواتي ومهاراتي الحالية","These are the technologies and practices I use and continue to develop through hands-on work.":"هذه التقنيات والممارسات التي أستخدمها وأواصل تطويرها من خلال التطبيق العملي.","Responsive design":"التصميم المتجاوب","JavaScript fundamentals":"أساسيات JavaScript","Accessible UI basics":"أساسيات واجهات الاستخدام الميسّرة","AI-assisted coding & review":"البرمجة والمراجعة بمساعدة الذكاء الاصطناعي","Legal research & structured analysis":"البحث القانوني والتحليل المنهجي","AI and digital-product exploration":"استكشاف الذكاء الاصطناعي والمنتجات الرقمية","Selected work":"أعمال مختارة","Projects built around real business needs":"مشاريع تلبي احتياجات الأعمال","Explore the website templates, digital products, and source repositories. Each project can be tailored to verified client requirements.":"استكشف قوالب المواقع والمنتجات الرقمية ومستودعات المصدر. يمكن تخصيص كل مشروع وفق متطلبات العميل بعد التحقق منها.","Personal Portfolio":"معرض الأعمال الشخصي","A central showcase for selected work, development skills, and a straightforward contact path for potential clients.":"واجهة مركزية لعرض الأعمال المختارة ومهارات التطوير وتسهيل التواصل مع العملاء المحتملين.","View source ↗":"عرض الكود ↗","Healthcare":"الرعاية الصحية","Dental Clinic Website":"موقع عيادة أسنان","DentoCare — Dental Website Template":"DentoCare — قالب موقع لعيادة الأسنان","Website template":"قالب موقع إلكتروني","A multilingual dental-practice website with an editorial layout, service discovery, patient-friendly information, and a customization inquiry path.":"موقع متعدد اللغات لعيادة أسنان، بتصميم منظم وخدمات واضحة ومعلومات مفيدة ومسار لطلب التخصيص.","View website ↗":"عرض الموقع ↗","A responsive website template for dental practices, with service highlights, patient FAQs, and clear appointment pathways. Branding and booking integrations can be tailored to each clinic.":"قالب متجاوب لعيادات الأسنان يعرض الخدمات والأسئلة الشائعة ومسارات التواصل والحجز بوضوح، مع إمكانية تخصيص الهوية ووسائل الحجز لكل عيادة.","View project ↗":"عرض المشروع ↗","Source code ↗":"الكود المصدري ↗","Professional services":"الخدمات المهنية","Lawyer Website":"موقع مكتب محاماة","A polished website template for legal practices, with practice-area sections, professional information, and a clear consultation journey. Credentials and jurisdiction-specific content can be added after verification.":"قالب احترافي للمكاتب القانونية يعرض مجالات الممارسة والمعلومات المهنية ومسار الاستشارة بوضوح، مع إضافة المؤهلات والمحتوى الخاص بالاختصاص القضائي بعد التحقق منها.","Legal technology":"تقنيات قانونية","Qadayai — Legal Case Organizer":"قضاياي — منظّم الملفات القانونية","An Arabic-first legal workspace for organizing case files, tasks, and document records. The interface focuses on workflow clarity; authentication, access controls, secure storage, and production safeguards must be implemented and reviewed before handling confidential matters.":"مساحة عمل قانونية بواجهة عربية لتنظيم ملفات القضايا والمهام والوثائق. تركّز الواجهة على وضوح سير العمل؛ ويجب تنفيذ ومراجعة المصادقة والتحكم في الوصول والتخزين الآمن وضوابط الإنتاج قبل معالجة الملفات السرية.","Full-stack starter":"بداية نظام متكامل","Clinic Management System":"نظام إدارة عيادة","A full-stack clinic-management starter generator for exploring appointments, patient records, and clinic workflows. Review the source, build the generated application, and complete security and privacy validation before any real patient information is used.":"مولّد لهيكل نظام متكامل لإدارة العيادات والمواعيد وسجلات المرضى. راجع المصدر وابنِ التطبيق الناتج وأكمل مراجعة الأمان والخصوصية قبل استخدام بيانات حقيقية.","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"ملاحظة: هذه أعمال مطوّرة ضمن معرض الأعمال وليست دراسات حالة لعملاء. يمكن الاتفاق على نطاق العمل والمحتوى والتكاملات ومتطلبات التشغيل والتحقق منها مع كل عميل.","Let's talk":"لنتحدث","Have a website idea?":"هل لديك فكرة لموقع؟","Tell me a little about your business, your goals, and what you need your website to do. We can discuss a practical next step with no obligation.":"أخبرني قليلاً عن نشاطك وأهدافك وما الذي تريد أن يحققه موقعك. يمكننا مناقشة خطوة عملية تالية دون أي التزام.","Send a project inquiry ↗":"أرسل استفساراً عن مشروع ↗","Send an email ↗":"أرسل بريداً إلكترونياً ↗","View CV ↗":"عرض السيرة الذاتية ↗","GitHub profile ↗":"حساب GitHub ↗","Back to top ↑":"العودة إلى الأعلى ↑","View repository ↗":"عرض المستودع ↗","Portfolio":"معرض الأعمال","Web":"الويب","Arabic / RTL layouts":"واجهات عربية وتنسيق RTL","Wahid Salah · Law × AI × Digital":"وحيد صلاح · قانون × ذكاء اصطناعي × رقمنة","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"متاحة للتخصيص حسب طلب العميل: يمكن تكييف كل موقع مع الهوية المعتمدة والمحتوى الموثوق واللغات المطلوبة وتكاملات التواصل أو الحجز المتفق عليها. يُحدد نطاق العمل ومتطلبات التسليم لكل طلب."};
+  const arabicDictionary = {"Where":"حيث","Skip to content":"تجاوز إلى المحتوى","Main navigation":"التنقل الرئيسي","Wahid Salah home":"الرئيسية — وحيد صلاح","Menu ☰":"القائمة ☰","Profile":"نبذة عني","Education":"الدراسة","Skills":"المهارات","Projects":"المشاريع","Contact":"تواصل","Web development · Based in Algeria · Open to projects":"تطوير الويب · الجزائر · متاح للمشاريع","Where ":"حيث ","law meets AI":"يلتقي القانون بالذكاء الاصطناعي","and digital innovation.":"والابتكار الرقمي.","I'm Wahid Salah. My profile brings together public law, artificial intelligence, and practical digital projects. I combine structured legal thinking with a technology-oriented perspective to make complex information clearer and digital experiences more useful.":"أنا وحيد صلاح. يجمع ملفي بين القانون العام والذكاء الاصطناعي والمشاريع الرقمية العملية. أدمج التفكير القانوني المنهجي مع منظور تقني لتبسيط المعلومات المعقدة وتقديم تجارب رقمية أكثر فائدة.","Explore my work":"استكشف أعمالي","Email me about a project ↗":"راسلني بخصوص مشروع ↗","Responsive layouts":"تصاميم متجاوبة","Clear calls to action":"دعوات واضحة لاتخاذ إجراء","Direct communication":"تواصل مباشر","Built for people":"مصمم لخدمة الناس","A little about me":"نبذة عني","Thoughtful design. Practical websites.":"تصميم مدروس. مواقع عملية.","I focus on making information easy to understand and the next step obvious for visitors.":"أركز على جعل المعلومات سهلة الفهم والخطوة التالية واضحة للزوار.","I build and refine web projects through hands-on coding, using AI tools as a supporting aid when useful—not as a substitute for reviewing the result. My projects range from personal portfolios to service-based websites. I aim to create online experiences that feel professional, work across screen sizes, and help people find the information they need. I value clear communication, practical testing, and continuous improvement.":"أبني مشاريع الويب وأطوّرها بكتابة الأكواد بنفسي، مع الاستعانة بأدوات الذكاء الاصطناعي عند الحاجة دون اعتبارها بديلاً عن مراجعة النتائج. تشمل مشاريعي معارض الأعمال ومواقع الخدمات. أسعى إلى تجارب رقمية احترافية تعمل على مختلف الشاشات وتساعد الزوار في العثور على المعلومات المطلوبة. أقدّر التواصل الواضح والاختبار العملي والتحسين المستمر.","Mobile-first thinking":"التصميم مع إعطاء الأولوية للهاتف","Layouts designed to work on phones, tablets, and desktops.":"تصاميم تعمل على الهواتف والأجهزة اللوحية والحواسيب.","Clear user journeys":"مسارات استخدام واضحة","Easy-to-find information and contact options.":"معلومات ووسائل تواصل يسهل العثور عليها.","Careful iteration":"تحسين تدريجي ومدروس","Improving structure, readability, and visual consistency.":"تحسين البنية وسهولة القراءة والاتساق البصري.","Academic interests":"اهتمامات أكاديمية","Law, technology, and practical problem-solving.":"القانون والتكنولوجيا وحل المشكلات عملياً.","An interdisciplinary direction connecting legal systems, structured research, and emerging digital tools.":"مسار متعدد التخصصات يربط الأنظمة القانونية بالبحث المنهجي والأدوات الرقمية الناشئة.","LAW & LEGAL RESEARCH":"القانون والبحث القانوني","Public law and legal analysis":"القانون العام والتحليل القانوني","Interests include public institutions, administrative frameworks, legal research, and explaining complex information clearly.":"تشمل الاهتمامات المؤسسات العامة والأطر الإدارية والبحث القانوني وشرح المعلومات المعقدة بوضوح.","AI & DIGITAL SYSTEMS":"الذكاء الاصطناعي والأنظمة الرقمية","Artificial intelligence and digital products":"الذكاء الاصطناعي والمنتجات الرقمية","Exploring practical web technologies and AI-related ideas to create useful, accessible digital experiences.":"استكشاف تقنيات الويب العملية وأفكار الذكاء الاصطناعي لبناء تجارب رقمية مفيدة وسهلة الوصول.","Skills & tools":"المهارات والأدوات","My current toolkit":"أدواتي ومهاراتي الحالية","These are the technologies and practices I use and continue to develop through hands-on work.":"هذه التقنيات والممارسات التي أستخدمها وأواصل تطويرها من خلال التطبيق العملي.","Responsive design":"التصميم المتجاوب","JavaScript fundamentals":"أساسيات JavaScript","Accessible UI basics":"أساسيات واجهات الاستخدام الميسّرة","AI-assisted coding & review":"البرمجة والمراجعة بمساعدة الذكاء الاصطناعي","Legal research & structured analysis":"البحث القانوني والتحليل المنهجي","AI and digital-product exploration":"استكشاف الذكاء الاصطناعي والمنتجات الرقمية","Selected work":"أعمال مختارة","Projects built around real business needs":"مشاريع تلبي احتياجات الأعمال","Explore the website templates, digital products, and source repositories. Each project can be tailored to verified client requirements.":"استكشف قوالب المواقع والمنتجات الرقمية ومستودعات المصدر. يمكن تخصيص كل مشروع وفق متطلبات العميل بعد التحقق منها.","Personal Portfolio":"معرض الأعمال الشخصي","A central showcase for selected work, development skills, and a straightforward contact path for potential clients.":"واجهة مركزية لعرض الأعمال المختارة ومهارات التطوير وتسهيل التواصل مع العملاء المحتملين.","View source ↗":"عرض الكود ↗","Healthcare":"الرعاية الصحية","Dental Clinic Website":"موقع عيادة أسنان","DentoCare — Dental Website Template":"DentoCare — قالب موقع لعيادة الأسنان","Website template":"قالب موقع إلكتروني","A multilingual dental-practice website with an editorial layout, service discovery, patient-friendly information, and a customization inquiry path.":"موقع متعدد اللغات لعيادة أسنان، بتصميم منظم وخدمات واضحة ومعلومات مفيدة ومسار لطلب التخصيص.","View website ↗":"عرض الموقع ↗","A responsive website template for dental practices, with service highlights, patient FAQs, and clear appointment pathways. Branding and booking integrations can be tailored to each clinic.":"قالب متجاوب لعيادات الأسنان يعرض الخدمات والأسئلة الشائعة ومسارات التواصل والحجز بوضوح، مع إمكانية تخصيص الهوية ووسائل الحجز لكل عيادة.","View project ↗":"عرض المشروع ↗","Source code ↗":"الكود المصدري ↗","Professional services":"الخدمات المهنية","Lawyer Website":"موقع مكتب محاماة","A polished website template for legal practices, with practice-area sections, professional information, and a clear consultation journey. Credentials and jurisdiction-specific content can be added after verification.":"قالب احترافي للمكاتب القانونية يعرض مجالات الممارسة والمعلومات المهنية ومسار الاستشارة بوضوح، مع إضافة المؤهلات والمحتوى الخاص بالاختصاص القضائي بعد التحقق منها.","Legal technology":"تقنيات قانونية","Interactive prototype":"نموذج تفاعلي أولي","Browser-based concept · Arabic / RTL":"تصور يعمل في المتصفح · واجهة عربية واتجاه من اليمين إلى اليسار","Qadayai — Legal Case Organizer":"قضاياي — منظّم الملفات القانونية","An Arabic-first legal workflow concept that brings case records, tasks, and document references into one clear, right-to-left workspace.":"تصور لسير عمل قانوني بواجهة عربية أولًا، يجمع ملفات القضايا والمهام ومراجع الوثائق ضمن مساحة واضحة تدعم اتجاه الكتابة من اليمين إلى اليسار.","Core features":"الميزات الأساسية","Case records":"ملفات القضايا","Tasks & deadlines":"المهام والآجال","Document register":"سجل الوثائق","Arabic / RTL":"العربية / اتجاه من اليمين إلى اليسار","Prototype status:":"حالة النموذج الأولي:","Local encryption is implemented, but security controls, backup and recovery, and privacy need a full review before confidential case data is used.":"التشفير المحلي مطبّق، لكن يجب إجراء مراجعة شاملة لضوابط الأمان والنسخ الاحتياطي والاستعادة والخصوصية قبل استخدام بيانات قضايا سرية.","Try the prototype ↗":"جرّب النموذج الأولي ↗","Review source ↗":"راجع الكود المصدري ↗"},"Full-stack starter":"بداية نظام متكامل","Clinic Management System":"نظام إدارة عيادة","A full-stack clinic-management starter generator for exploring appointments, patient records, and clinic workflows. Review the source, build the generated application, and complete security and privacy validation before any real patient information is used.":"مولّد لهيكل نظام متكامل لإدارة العيادات والمواعيد وسجلات المرضى. راجع المصدر وابنِ التطبيق الناتج وأكمل مراجعة الأمان والخصوصية قبل استخدام بيانات حقيقية.","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"ملاحظة: هذه أعمال مطوّرة ضمن معرض الأعمال وليست دراسات حالة لعملاء. يمكن الاتفاق على نطاق العمل والمحتوى والتكاملات ومتطلبات التشغيل والتحقق منها مع كل عميل.","Let's talk":"لنتحدث","Have a website idea?":"هل لديك فكرة لموقع؟","Tell me a little about your business, your goals, and what you need your website to do. We can discuss a practical next step with no obligation.":"أخبرني قليلاً عن نشاطك وأهدافك وما الذي تريد أن يحققه موقعك. يمكننا مناقشة خطوة عملية تالية دون أي التزام.","Send a project inquiry ↗":"أرسل استفساراً عن مشروع ↗","Send an email ↗":"أرسل بريداً إلكترونياً ↗","View CV ↗":"عرض السيرة الذاتية ↗","GitHub profile ↗":"حساب GitHub ↗","Back to top ↑":"العودة إلى الأعلى ↑","View repository ↗":"عرض المستودع ↗","Portfolio":"معرض الأعمال","Web":"الويب","Arabic / RTL layouts":"واجهات عربية وتنسيق RTL","Wahid Salah · Law × AI × Digital":"وحيد صلاح · قانون × ذكاء اصطناعي × رقمنة","Available for client customization: Each website can be adapted to an approved brand, verified content, preferred languages, and agreed contact or booking integrations. Scope and delivery requirements are confirmed for each engagement.":"متاحة للتخصيص حسب طلب العميل: يمكن تكييف كل موقع مع الهوية المعتمدة والمحتوى الموثوق واللغات المطلوبة وتكاملات التواصل أو الحجز المتفق عليها. يُحدد نطاق العمل ومتطلبات التسليم لكل طلب."};
   const languageButton = document.getElementById('languageToggle');
   let pageLanguage = 'en';
   const textNodes = [];
